@@ -13,6 +13,8 @@ namespace Centralizator_Studenti
     {
         //pathul si conexiunea globale pentru intreg proiectul
         public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\FACULTATE\\An3 Sem2\\Licenta\\Centralizator Studenti\\Database CS.accdb;Persist Security Info=False;";
+        //        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Database CS.accdb;Persist Security Info=False;";
+
         public static OleDbConnection connection = new OleDbConnection(connectionString: connectionString);
 
         //Crearea liste globale
@@ -44,7 +46,7 @@ namespace Centralizator_Studenti
                 "FROM (((T_Candidati " +
                 "INNER JOIN T_Buletine ON T_Candidati.NrDosar = T_Buletine.FK_NrDosar) " +
                 "INNER JOIN T_Dosare ON T_Candidati.NrDosar = T_Dosare.NrDosar) " +
-                "INNER JOIN T_Licee ON T_Candidati.FK_CodLiceu = T_Licee.CodLiceu);";
+                "INNER JOIN T_Licee ON T_Candidati.FK_CodLiceu = T_Licee.CodLiceu) order by T_Candidati.NrDosar asc;";
             OleDbCommand command = new OleDbCommand(query, connection);
             connection.Open();
             OleDbDataReader reader = command.ExecuteReader();
@@ -70,7 +72,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT CodFormat, SumaDeAchitat, Scop, IndexFormat FROM T_ModeleDeTaxa;";
+            query = "SELECT CodFormat, SumaDeAchitat, Scop, IndexFormat FROM T_ModeleDeTaxa ORDER BY CodFormat ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -80,7 +82,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT CodTranzactie, IBAN, Data, Suma, FK_NrDosar, FK_Model, AnStudent FROM T_Tranzactii;";
+            query = "SELECT CodTranzactie, IBAN, Data, Suma, FK_NrDosar, FK_Model, AnStudent FROM T_Tranzactii ORDER BY CodTranzactie ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -103,7 +105,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar FROM T_Studenti;";
+            query = "SELECT NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar FROM T_Studenti ORDER BY NrMatricol ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -121,7 +123,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci FROM T_Discipline;";
+            query = "SELECT IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci FROM T_Discipline ORDER BY IdDisciplina ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -132,17 +134,17 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT AEDenumire, DataS, DataE, Organizator, Tip FROM T_ActivitatiExtracuriculare;";
+            query = "SELECT IdActivExtra, AEDenumire, DataS, DataE, Organizator, Tip, AnAcadAplicabil, SemAE FROM T_ActivitatiExtracuriculare ORDER BY IdActivExtra ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ClassActivitatiextra actextr = new ClassActivitatiextra(reader["AEDenumire"].ToString(), reader["DataS"].ToString(), reader["DataE"].ToString(), reader["Organizator"].ToString(), reader["Tip"].ToString());
+                ClassActivitatiextra actextr = new ClassActivitatiextra(reader["IdActivExtra"].ToString(),reader["AEDenumire"].ToString(), reader["DataS"].ToString(), reader["DataE"].ToString(), reader["Organizator"].ToString(), reader["Tip"].ToString(), reader["AnAcadAplicabil"].ToString(), reader["SemAE"].ToString());
                 listActExtr.Add(actextr);
             }
             reader.Close();
 
-            query = "SELECT CodInregistrare, FK_NrMatricol, FK_IdDisciplina, NotaFinala, NrAbsente FROM T_SituatiiAcademice;";
+            query = "SELECT CodInregistrare, FK_NrMatricol, FK_IdDisciplina, NotaFinala, NrAbsente FROM T_SituatiiAcademice ORDER BY CodInregistrare ASC;";
             command = new OleDbCommand(query,connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -166,7 +168,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT CodPrezenta, FK_AEDenumire, FK_NrMatricol FROM T_PrezentaExtra;";
+            query = "SELECT CodPrezenta, FK_IdActivExtra, FK_NrMatricol FROM T_PrezentaExtra ORDER BY CodPrezenta ASC;";
             command = new OleDbCommand (query,connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -177,7 +179,7 @@ namespace Centralizator_Studenti
                     {
                         foreach(ClassActivitatiextra actextr in listActExtr)
                         {
-                            if(actextr._AEDenumire == reader["FK_AEDenumire"].ToString())
+                            if(actextr._IdActivExtra == reader["FK_IdActivExtra"].ToString())
                             {
                                 ClassPrezentaExtra prextr = new ClassPrezentaExtra(reader["CodPrezenta"].ToString(),actextr,stud);
                                 listPrExtr.Add(prextr);

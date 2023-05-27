@@ -152,6 +152,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form10_ViewActiExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10_ViewActiExtra.Designer.cs">
+      <DependentUpon>Form10_ViewActiExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11_InputPrezentaActivitati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11_InputPrezentaActivitati.Designer.cs">
+      <DependentUpon>Form11_InputPrezentaActivitati.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +207,12 @@
     <Compile Include="Form8_View_Discipline.Designer.cs">
       <DependentUpon>Form8_View_Discipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form9_SitAcademiceInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9_SitAcademiceInput.Designer.cs">
+      <DependentUpon>Form9_SitAcademiceInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassTaxe.cs" />
@@ -202,6 +220,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10_ViewActiExtra.resx">
+      <DependentUpon>Form10_ViewActiExtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2 Inscrieri_Editare Candidati.resx">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
@@ -224,6 +245,9 @@
     <EmbeddedResource Include="Form8_View_Discipline.resx">
       <DependentUpon>Form8_View_Discipline.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form9_SitAcademiceInput.resx">
+      <DependentUpon>Form9_SitAcademiceInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -235,7 +259,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Database_CSDataSet.xsc">
       <DependentUpon>Database_CSDataSet.xsd</DependentUpon>
     </None>

@@ -98,6 +98,7 @@ namespace Centralizator_Studenti
                 string query = $"INSERT INTO T_Discipline (IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci) VALUES ({m},'{textBox3.Text}',{textBox2.Text},{textBox5.Text},{textBox4.Text},{textBox6.Text},{textBox7.Text})";
                 OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                 oleDbCommand.ExecuteNonQuery();
+                nou = false;
             }
             else
             {

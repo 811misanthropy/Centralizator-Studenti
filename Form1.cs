@@ -73,5 +73,23 @@ namespace Centralizator_Studenti
             Form8_View_Discipline f8 = new Form8_View_Discipline();
             f8.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form9_SitAcademiceInput f9 = new Form9_SitAcademiceInput();
+            f9.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form10_ViewActiExtra f10 = new Form10_ViewActiExtra();
+            f10.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form11_InputPrezentaActivitati f11 = new Form11_InputPrezentaActivitati();
+            f11.ShowDialog();
+        }
     }
 }
