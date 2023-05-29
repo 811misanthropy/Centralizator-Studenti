@@ -141,6 +141,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet3.cs">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,13 +167,36 @@
     <Compile Include="Form11_InputPrezentaActivitati.Designer.cs">
       <DependentUpon>Form11_InputPrezentaActivitati.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form12_RaportAdmitere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12_RaportAdmitere.Designer.cs">
+      <DependentUpon>Form12_RaportAdmitere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13_RaportPrezentaExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13_RaportPrezentaExtra.Designer.cs">
+      <DependentUpon>Form13_RaportPrezentaExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14_RaportStructuraAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14_RaportStructuraAn.Designer.cs">
+      <DependentUpon>Form14_RaportStructuraAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15_RaportStructuraGrupa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15_RaportStructuraGrupa.Designer.cs">
+      <DependentUpon>Form15_RaportStructuraGrupa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.Designer.cs">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2_Inscrieri_Editare_CandidatiHelpers.cs" />
     <Compile Include="Form3 Inmatriculare_Editare Studenti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +250,21 @@
     <EmbeddedResource Include="Form10_ViewActiExtra.resx">
       <DependentUpon>Form10_ViewActiExtra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form11_InputPrezentaActivitati.resx">
+      <DependentUpon>Form11_InputPrezentaActivitati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12_RaportAdmitere.resx">
+      <DependentUpon>Form12_RaportAdmitere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13_RaportPrezentaExtra.resx">
+      <DependentUpon>Form13_RaportPrezentaExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form14_RaportStructuraAn.resx">
+      <DependentUpon>Form14_RaportStructuraAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15_RaportStructuraGrupa.resx">
+      <DependentUpon>Form15_RaportStructuraGrupa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2 Inscrieri_Editare Candidati.resx">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +300,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2_ListaAdmitere.rdlc" />
+    <EmbeddedResource Include="Report3_ConditiiBursa.rdlc" />
+    <EmbeddedResource Include="Report4_ListaPrezentaExtra.rdlc" />
+    <EmbeddedResource Include="Report5_StructuraAn.rdlc" />
+    <EmbeddedResource Include="Report6_StructuraGrupa.rdlc" />
     <None Include="Database_CSDataSet.xsc">
       <DependentUpon>Database_CSDataSet.xsd</DependentUpon>
     </None>

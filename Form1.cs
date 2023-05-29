@@ -91,5 +91,29 @@ namespace Centralizator_Studenti
             Form11_InputPrezentaActivitati f11 = new Form11_InputPrezentaActivitati();
             f11.ShowDialog();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form12_RaportAdmitere f12 = new Form12_RaportAdmitere();
+            f12.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form13_RaportPrezentaExtra f13 = new Form13_RaportPrezentaExtra();
+            f13.ShowDialog();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Form14_RaportStructuraAn f14 = new Form14_RaportStructuraAn();
+            f14.ShowDialog();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Form15_RaportStructuraGrupa f15 = new Form15_RaportStructuraGrupa();
+            f15.ShowDialog();
+        }
     }
 }

@@ -1,14 +1,14 @@
 ﻿namespace Centralizator_Studenti
 {
-}
-
-namespace Centralizator_Studenti
-{
 
 
-    public partial class DataSet1
+    partial class DataSet1
     {
-        partial class T_TranzactiiDataTable
+        partial class DataTable1DataTable
+        {
+        }
+
+        partial class DataTable2DataTable
         {
         }
     }

@@ -2148,7 +2148,7 @@ ORDER BY T_Tranzactii.CodTranzactie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Centralizator_Studenti.Properties.Settings.Default.Database_CSConnectionString1;
+            this._connection.ConnectionString = global::Centralizator_Studenti.Properties.Settings.Default.Database_CSConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
