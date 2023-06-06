@@ -17,9 +17,11 @@ namespace Centralizator_Studenti
         public string _AnAcaDisci { get; private set; }
         public string _AnStudDisci { get; private set; }
         public string _SemStudDisci { get; private set; }
+        public ClassCadreFacultate _CF { get; private set; }
+        
 
 
-        public ClassDiscipline(string id,string denumire, string punctcred, string nrore, string anaca, string anstud, string semstud)
+        public ClassDiscipline(string id,string denumire, string punctcred, string nrore, string anaca, string anstud, string semstud, ClassCadreFacultate CF)
         {
             _IdDisciplna = id;
             _DDenumire = denumire;
@@ -28,6 +30,7 @@ namespace Centralizator_Studenti
             _AnAcaDisci = anaca;
             _AnStudDisci = anstud;
             _SemStudDisci= semstud;
+            _CF = new ClassCadreFacultate(CF);
         }
 
         public ClassDiscipline(ClassDiscipline dis)
@@ -39,6 +42,7 @@ namespace Centralizator_Studenti
             _AnAcaDisci= dis._AnAcaDisci;
             _AnStudDisci=dis._AnStudDisci;
             _SemStudDisci = dis._SemStudDisci;
+            _CF = new ClassCadreFacultate(dis._CF);
         }
 
         public int CompareTo(object b)

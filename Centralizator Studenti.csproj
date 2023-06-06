@@ -112,7 +112,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAccount.cs" />
     <Compile Include="ClassActivitatiextra.cs" />
+    <Compile Include="ClassCadreFacultate.cs" />
     <Compile Include="ClassCandidati.cs" />
     <Compile Include="ClassDiscipline.cs" />
     <Compile Include="ClassGlobalVar.cs" />
@@ -191,6 +193,24 @@
     <Compile Include="Form15_RaportStructuraGrupa.Designer.cs">
       <DependentUpon>Form15_RaportStructuraGrupa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form16_Autentificare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form16_Autentificare.Designer.cs">
+      <DependentUpon>Form16_Autentificare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form17_MeniuProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17_MeniuProfesor.Designer.cs">
+      <DependentUpon>Form17_MeniuProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form18_MeniuStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form18_MeniuStudent.Designer.cs">
+      <DependentUpon>Form18_MeniuStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +285,9 @@
     <EmbeddedResource Include="Form15_RaportStructuraGrupa.resx">
       <DependentUpon>Form15_RaportStructuraGrupa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form16_Autentificare.resx">
+      <DependentUpon>Form16_Autentificare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2 Inscrieri_Editare Candidati.resx">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +328,7 @@
     <EmbeddedResource Include="Report4_ListaPrezentaExtra.rdlc" />
     <EmbeddedResource Include="Report5_StructuraAn.rdlc" />
     <EmbeddedResource Include="Report6_StructuraGrupa.rdlc" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Database_CSDataSet.xsc">
       <DependentUpon>Database_CSDataSet.xsd</DependentUpon>
     </None>

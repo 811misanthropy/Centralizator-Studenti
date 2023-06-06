@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Centralizator_Studenti.ClassAccount">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAAAAAAgAQEAAAAIAABAIEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassAccount.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassTemplateList&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassTemplateList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassGlobalVar">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAIAAAAIAAwAAAABCAIAAgAAAEAAAAAAQAAEEAg=</HashCode>
+      <FileName>ClassGlobalVar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassCandidati">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEQEAAAAAkEAAcEAMABMYCAAAECAIBEACAACwAogBA=</HashCode>
+      <FileName>ClassCandidati.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassStudenti">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAIQEAAAAAAAAIAAAAAAASAAAAAAAAAA=</HashCode>
+      <FileName>ClassStudenti.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassTaxe">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEACEAAAAgAAAAAAAAAAAAAAAEEAA=</HashCode>
+      <FileName>ClassTaxe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassTranzactii">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAIAAAAgQEAAAAAAQAAAAAAAAACABEAAAAABA=</HashCode>
+      <FileName>ClassTranzactii.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassDiscipline">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAgAAASQEAAAAAAIAAAAAAAAAAAAAABAABAg=</HashCode>
+      <FileName>ClassDiscipline.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassSituatiiAcademice">
+    <Position X="9.5" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAAAQEAAAAAAAAAAAAAYAAAAAAAAAABAA=</HashCode>
+      <FileName>ClassSituatiiAcademice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassActivitatiextra">
+    <Position X="11.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAASAACAAQEAAAABAAQAAACgAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ClassActivitatiextra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassPrezentaExtra">
+    <Position X="11.75" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAQEAAAAAAAIAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>ClassPrezentaExtra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Centralizator_Studenti.ClassCadreFacultate">
+    <Position X="2.25" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BACAAAAAAQIAAAQEAAAAAAAAAAAAAAAQAAAAAAAAIAA=</HashCode>
+      <FileName>ClassCadreFacultate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

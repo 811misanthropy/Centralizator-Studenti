@@ -29,6 +29,9 @@ namespace Centralizator_Studenti
         private void Form1_Load(object sender, EventArgs e)
         {
             ClassGlobalVar.InitializareDate();
+            string[] a = ClassGlobalVar.account._Titlu.Split('.');
+            if (a[0] == "Decan")
+                button15.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -114,6 +117,11 @@ namespace Centralizator_Studenti
         {
             Form15_RaportStructuraGrupa f15 = new Form15_RaportStructuraGrupa();
             f15.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ClassGlobalVar.account = new ClassAccount("","","","","");
         }
     }
 }
