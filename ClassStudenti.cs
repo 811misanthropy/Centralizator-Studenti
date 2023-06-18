@@ -16,14 +16,16 @@ namespace Centralizator_Studenti
         public string _EmailInst { get; private set; }
         public int _Grupa { get; private set; }
         public ClassCandidati _Candid { get; private set; }
+        public string _StudActiv { get; private set; }
 
-        public ClassStudenti(string nrMatricol, string anStud, string emailInst, int grupa, ClassCandidati cand)
+        public ClassStudenti(string nrMatricol, string anStud, string emailInst, int grupa, ClassCandidati cand, string studActiv)
         {
             _NrMatricol = nrMatricol;
             _AnStud = anStud;
             _EmailInst = emailInst;
             _Grupa = grupa;
             _Candid = new ClassCandidati(cand);
+            _StudActiv = studActiv;
         }
 
         public ClassStudenti(string nrMatricol, ClassCandidati cand)
@@ -33,6 +35,7 @@ namespace Centralizator_Studenti
             _EmailInst = "PLACEHOLDER";
             _Grupa = 0;
             _Candid = new ClassCandidati(cand);
+            _StudActiv = "Inactiv";
         }
 
         public ClassStudenti(ClassStudenti stud)
@@ -42,6 +45,7 @@ namespace Centralizator_Studenti
             _EmailInst = stud._EmailInst;
             _Grupa = stud._Grupa;
             _Candid = new ClassCandidati(stud._Candid);
+            _StudActiv = stud._StudActiv;
         }
 
         public int CompareTo(object b)

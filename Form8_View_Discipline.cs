@@ -25,7 +25,7 @@ namespace Centralizator_Studenti
             textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = textBox7.Text = "";
             foreach(ClassDiscipline disci in ClassGlobalVar.listDisci)
             {
-                if(textBox1.Text==disci._AnAcaDisci)
+                if(textBox1.Text==disci._AnAcaDisci && disci._CF._IDCF == ClassGlobalVar.account._CompID)
                     listBox1.Items.Add(disci);
             }
             if (listBox1.Items.Count == 0)
@@ -95,7 +95,7 @@ namespace Centralizator_Studenti
             if(nou==true)
             {
                 int m = int.Parse(ClassGlobalVar.listDisci[ClassGlobalVar.listDisci.Count()-1]._IdDisciplna)+1;
-                string query = $"INSERT INTO T_Discipline (IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci) VALUES ({m},'{textBox3.Text}',{textBox2.Text},{textBox5.Text},{textBox4.Text},{textBox6.Text},{textBox7.Text})";
+                string query = $"INSERT INTO T_Discipline (IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci, FK_IDCF) VALUES ({m},'{textBox3.Text}',{textBox2.Text},{textBox5.Text},{textBox4.Text},{textBox6.Text},{textBox7.Text},{ClassGlobalVar.account._CompID})";
                 OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                 oleDbCommand.ExecuteNonQuery();
                 nou = false;

@@ -26,7 +26,7 @@ namespace Centralizator_Studenti
             textBox4.Text = "";
             textBox5.Text = "";
             textBox6.Text = "";
-            if (listBox1.SelectedItems.Count > 0)
+            if (listBox1.SelectedItems.Count == 1)
             {
                 foreach (ClassStudenti stud in ClassGlobalVar.listStud)
                 {
@@ -37,6 +37,10 @@ namespace Centralizator_Studenti
                         textBox4.Text = stud._AnStud;
                         textBox5.Text = stud._EmailInst;
                         textBox6.Text = stud._Grupa.ToString();
+                        if (stud._StudActiv == "Activ")
+                            radioButton1.Checked = true;
+                        else
+                            radioButton2.Checked = true;
                         break;
                     }
                 }
@@ -70,7 +74,7 @@ namespace Centralizator_Studenti
             else
                 return false;
         }
-
+        //buton cautare candidati/studenti
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -91,7 +95,6 @@ namespace Centralizator_Studenti
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Incarcare();
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -103,7 +106,6 @@ namespace Centralizator_Studenti
         {
             if (listBox1.SelectedItems.Count == 1)
             {
-
                 Incarcare();
             }
             else
@@ -127,9 +129,13 @@ namespace Centralizator_Studenti
 
         private void button4_Click(object sender, EventArgs e)
         {
+            string a;
             ClassGlobalVar.connection.Open();
-            string query = $"UPDATE T_Studenti SET An='{textBox4.Text}',EmailInstitutional='{textBox5.Text}'," +
-                            $"Grupa='{textBox6.Text}' WHERE NrMatricol='{textBox3.Text}';";
+            if (radioButton1.Checked == true)
+                a = "Activ";
+            else a = "Inactiv";
+                string query = $"UPDATE T_Studenti SET An='{textBox4.Text}',EmailInstitutional='{textBox5.Text}'," +
+                                $"Grupa='{textBox6.Text}', STUDActiv='{a}' WHERE NrMatricol='{textBox3.Text}';";
             using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
             {
                 comm.ExecuteNonQuery();
@@ -230,7 +236,7 @@ namespace Centralizator_Studenti
                 {
                     ClassStudenti stud = new ClassStudenti((int.Parse(ClassGlobalVar.listStud[ClassGlobalVar.listStud.Count - 1]._NrMatricol)+1).ToString(), cand);
                     ClassGlobalVar.listStud.Add(stud);
-                    string query = $"INSERT INTO T_Studenti(NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar) VALUES ('{stud._NrMatricol}','{stud._AnStud}','{stud._EmailInst}','{stud._Grupa}','{stud._Candid._NrDosar}')";
+                    string query = $"INSERT INTO T_Studenti(NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar, STUDActiv) VALUES ('{stud._NrMatricol}','{stud._AnStud}','{stud._EmailInst}','{stud._Grupa}','{stud._Candid._NrDosar}','{stud._StudActiv}')";
                     OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                     oleDbCommand.ExecuteNonQuery();
                 }

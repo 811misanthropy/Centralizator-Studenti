@@ -16,5 +16,22 @@ namespace Centralizator_Studenti
         {
             InitializeComponent();
         }
+
+        private void Form18_MeniuStudent_Load(object sender, EventArgs e)
+        {
+            label11.Text += ClassGlobalVar.account._Nume;
+        }
+        //vizualizare tranzactii student
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form21ReportStudentTranzactii f21 = new Form21ReportStudentTranzactii();
+            f21.ShowDialog();
+        }
+        //vizualizare note student
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form20_RaportStudentNote f20 = new Form20_RaportStudentNote();
+            f20.ShowDialog();
+        }
     }
 }

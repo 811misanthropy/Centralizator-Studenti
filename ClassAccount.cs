@@ -15,8 +15,9 @@ namespace Centralizator_Studenti
         public string _Pword { get; private set; } 
         public string _Nume { get; private set; } 
         public string _Titlu { get; private set; } 
+        public string _Activ { get; private set; }
 
-        public ClassAccount(string compid, string email, string pword, string nume, string titlu)
+        public ClassAccount(string compid, string email, string pword, string nume, string titlu, string activ)
         {
             _AccTempID = System.Threading.Interlocked.Increment(ref ID);
             _CompID = compid;
@@ -24,6 +25,7 @@ namespace Centralizator_Studenti
             _Pword = pword;
             _Nume = nume;
             _Titlu = titlu;
+            _Activ = activ;
         }
 
         public ClassAccount(ClassAccount ac)
@@ -34,10 +36,12 @@ namespace Centralizator_Studenti
             _Pword = ac._Pword;
             _Nume = ac._Nume;
             _Titlu = ac._Titlu;
+            _Activ = ac._Activ;
         }
 
         public int CompareTo(object b)
         {
+            
             return _AccTempID.CompareTo((b as ClassAccount)._AccTempID);
         }
 

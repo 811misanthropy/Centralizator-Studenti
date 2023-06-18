@@ -36,32 +36,37 @@ namespace Centralizator_Studenti
                     }
                 }
                 if (ClassGlobalVar.account._Email != "")
-                {                    
-                    string[] a = ClassGlobalVar.account._Titlu.Split('.');
-                    if (ClassGlobalVar.account._Titlu == "Student")
+                {   if (ClassGlobalVar.account._Activ == "Activ")
                     {
-                        //Meniu Student
-                        Form18_MeniuStudent f18 = new Form18_MeniuStudent();
-                        f18.ShowDialog();
-                    }
-                    else if (ClassGlobalVar.account._Titlu == "Secretar")
-                    {
-                        //Meniu Secretariat
-                        Form1 f1 = new Form1();
-                        f1.ShowDialog();
-                    }
-                    else if (a[0] == "Decan")
-                    {
-                        //Meniu Decan
-                        Form1 f1 = new Form1();
-                        f1.ShowDialog();
+                        string[] a = ClassGlobalVar.account._Titlu.Split('.');
+                        if (ClassGlobalVar.account._Titlu == "Student")
+                        {
+                            //Meniu Student
+                            Form18_MeniuStudent f18 = new Form18_MeniuStudent();
+                            f18.ShowDialog();
+                        }
+                        else if (ClassGlobalVar.account._Titlu == "Secretar")
+                        {
+                            //Meniu Secretariat
+                            Form1 f1 = new Form1();
+                            f1.ShowDialog();
+                        }
+                        else if (a[0] == "Decan")
+                        {
+                            //Meniu Decan
+                            Form1 f1 = new Form1();
+                            f1.ShowDialog();
+                        }
+                        else
+                        {
+                            //Meniu Profesor 
+                            Form17_MeniuProfesor f17 = new Form17_MeniuProfesor();
+                            f17.ShowDialog();
+                        }
+                        textBox1.Text = textBox2.Text = "";
                     }
                     else
-                    {
-                        //Meniu Profesor 
-                        Form17_MeniuProfesor f17 = new Form17_MeniuProfesor();
-                        f17.ShowDialog();
-                    }
+                        MessageBox.Show("Contul este dezactivat, adresativa administratorilor!");
                 }
                 else
                     MessageBox.Show("Informatiile introduse nu sunt corecte!");

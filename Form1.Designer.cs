@@ -55,6 +55,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -199,7 +200,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(209, 94);
+            this.button5.Location = new System.Drawing.Point(213, 94);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(140, 37);
             this.button5.TabIndex = 16;
@@ -219,12 +220,13 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(373, 94);
+            this.button7.Location = new System.Drawing.Point(526, 94);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(140, 37);
             this.button7.TabIndex = 18;
             this.button7.Text = "Vizualizare Discipline";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
@@ -235,11 +237,12 @@
             this.button8.TabIndex = 19;
             this.button8.Text = "Inregistrari situatii academice";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(529, 94);
+            this.button9.Location = new System.Drawing.Point(368, 94);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(140, 37);
             this.button9.TabIndex = 20;
@@ -328,6 +331,16 @@
             this.button15.Text = "Vizualizare Personal";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Visible = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(782, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Bine ai venit: ";
             // 
             // Form1
             // 
@@ -335,6 +348,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1069, 691);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
@@ -402,6 +416,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label11;
     }
 }
 

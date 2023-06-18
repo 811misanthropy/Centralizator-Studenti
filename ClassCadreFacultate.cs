@@ -14,8 +14,9 @@ namespace Centralizator_Studenti
         public string _CFTelefon { get; private set; }
         public string _CFEmail { get; private set; }
         public string _CFPassw { get; private set; }
+        public string _Activ { get;private set; }
 
-        public ClassCadreFacultate (string iDCF, string cFNume, string cFTitlu, string cFTelefon, string cFEmail,  string cFPassw)
+        public ClassCadreFacultate (string iDCF, string cFNume, string cFTitlu, string cFTelefon, string cFEmail,  string cFPassw, string activ)
         {
             _IDCF = iDCF;
             _CFNume = cFNume;
@@ -23,6 +24,7 @@ namespace Centralizator_Studenti
             _CFTelefon = cFTelefon;
             _CFEmail = cFEmail;
             _CFPassw = cFPassw;
+            _Activ = activ;
         }
 
         public ClassCadreFacultate (ClassCadreFacultate CF)
@@ -33,6 +35,7 @@ namespace Centralizator_Studenti
             _CFTelefon= CF._CFTelefon;
             _CFEmail = CF._CFEmail;
             _CFPassw = CF._CFPassw;
+            _Activ= CF._Activ;
         }
 
         public int CompareTo(object b)

@@ -16,5 +16,22 @@ namespace Centralizator_Studenti
         {
             InitializeComponent();
         }
+
+        private void Form17_MeniuProfesor_Load(object sender, EventArgs e)
+        {
+            label1.Text += ClassGlobalVar.account._Nume;
+        }
+        //button Discipline
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form8_View_Discipline f8 = new Form8_View_Discipline();
+            f8.ShowDialog();
+        }
+        //button Note
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form9_SitAcademiceInput f9 = new Form9_SitAcademiceInput();
+            f9.ShowDialog();
+        }
     }
 }

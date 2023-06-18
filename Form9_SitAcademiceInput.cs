@@ -36,7 +36,7 @@ namespace Centralizator_Studenti
                 MessageBox.Show("Nu au fost gasiti studenti pentru valoarea introdusa!");
             }
         }
-
+        //cautare situatii academice
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -46,8 +46,7 @@ namespace Centralizator_Studenti
                 int m = int.Parse((listBox2.SelectedItems[0] as ClassStudenti)._NrMatricol);
                 foreach (ClassSituatiiAcademice sita in ClassGlobalVar.listSitAca)
                 {
-                    if(sita._Stud._NrMatricol==m.ToString())
-                    if(sita._Stud._NrMatricol==m.ToString())
+                    if(sita._Stud._NrMatricol==m.ToString() && sita._Discipline._CF._IDCF == ClassGlobalVar.account._CompID)
                             listBox1.Items.Add(sita);
                 }
             }
@@ -137,7 +136,7 @@ namespace Centralizator_Studenti
             listBox3.Items.Clear();
             foreach(ClassDiscipline disci in ClassGlobalVar.listDisci)
             {
-                if(disci._AnAcaDisci==textBox6.Text)
+                if(disci._AnAcaDisci==textBox6.Text && disci._CF._IDCF==ClassGlobalVar.account._CompID)
                 {
                     listBox3.Items.Add(disci);
                 }

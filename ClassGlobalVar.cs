@@ -28,7 +28,7 @@ namespace Centralizator_Studenti
         public static ClassTemplateList<ClassSituatiiAcademice> listSitAca = new ClassTemplateList<ClassSituatiiAcademice>();
         public static ClassTemplateList<ClassCadreFacultate> listCadre = new ClassTemplateList<ClassCadreFacultate>();
         public static ClassTemplateList<ClassAccount> listAcc = new ClassTemplateList<ClassAccount>();
-        public static ClassAccount account = new ClassAccount("","","","","");
+        public static ClassAccount account = new ClassAccount("","","","","","Inactiv");
         public static void InitializareDate()
         {
             listCandid.Clear();
@@ -42,14 +42,14 @@ namespace Centralizator_Studenti
             listCadre.Clear();
 
             connection.Open();
-            string query = "Select IDCF, CFNume, CFTitlu, CFTelefon, CFEmail, CFPassw from T_CadreFacultate Order by IDCF ASC;";
+            string query = "Select IDCF, CFNume, CFTitlu, CFTelefon, CFEmail, CFPassw, CFActiv from T_CadreFacultate Order by IDCF ASC;";
             OleDbCommand command = new OleDbCommand(query, connection);
             OleDbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ClassCadreFacultate CF = new ClassCadreFacultate(reader["IDCF"].ToString(), reader["CFNume"].ToString(), reader["CFTitlu"].ToString(), reader["CFTelefon"].ToString(), reader["CFEmail"].ToString(), reader["CFPassw"].ToString());
+                ClassCadreFacultate CF = new ClassCadreFacultate(reader["IDCF"].ToString(), reader["CFNume"].ToString(), reader["CFTitlu"].ToString(), reader["CFTelefon"].ToString(), reader["CFEmail"].ToString(), reader["CFPassw"].ToString(), reader["CFActiv"].ToString());
                 listCadre.Add(CF);
-                listAcc.Add(new ClassAccount(CF._IDCF, CF._CFEmail, CF._CFPassw, CF._CFPassw, CF._CFTitlu));
+                listAcc.Add(new ClassAccount(CF._IDCF, CF._CFEmail, CF._CFPassw, CF._CFNume, CF._CFTitlu, CF._Activ));
             }
             reader.Close();
 
@@ -121,7 +121,7 @@ namespace Centralizator_Studenti
             }
             reader.Close();
 
-            query = "SELECT NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar FROM T_Studenti ORDER BY NrMatricol ASC;";
+            query = "SELECT NrMatricol, An, EmailInstitutional, Grupa, FK_NrDosar, STUDActiv FROM T_Studenti ORDER BY NrMatricol ASC;";
             command = new OleDbCommand(query, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -131,9 +131,9 @@ namespace Centralizator_Studenti
                 {
                     if (cand._NrDosar == reader["FK_NrDosar"].ToString())
                     {
-                        ClassStudenti stud = new ClassStudenti(reader["NrMatricol"].ToString(), reader["An"].ToString(), reader["EmailInstitutional"].ToString(), int.Parse(reader["Grupa"].ToString()), cand);
+                        ClassStudenti stud = new ClassStudenti(reader["NrMatricol"].ToString(), reader["An"].ToString(), reader["EmailInstitutional"].ToString(), int.Parse(reader["Grupa"].ToString()), cand, reader["STUDActiv"].ToString());
                         listStud.Add(stud);
-                        listAcc.Add(new ClassAccount(stud._NrMatricol,stud._EmailInst,stud._Candid._CNP,$"{stud._Candid._Nume} {stud._Candid._InitTata} {stud._Candid._Prenume}","Student"));
+                        listAcc.Add(new ClassAccount(stud._Candid._NrDosar,stud._EmailInst,stud._Candid._CNP,$"{stud._Candid._Nume} {stud._Candid._InitTata} {stud._Candid._Prenume}","Student",stud._StudActiv));
                         break;
                     }
                 }

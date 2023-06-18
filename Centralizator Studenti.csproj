@@ -151,6 +151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet4StudentReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,11 +216,35 @@
     <Compile Include="Form18_MeniuStudent.Designer.cs">
       <DependentUpon>Form18_MeniuStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form19.Designer.cs">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2 Inscrieri_Editare Candidati.Designer.cs">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form20_RaportStudentNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form20_RaportStudentNote.Designer.cs">
+      <DependentUpon>Form20_RaportStudentNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form21ReportStudentTranzactii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form21ReportStudentTranzactii.Designer.cs">
+      <DependentUpon>Form21ReportStudentTranzactii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form22_ViewPersonalFacultate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form22_ViewPersonalFacultate.Designer.cs">
+      <DependentUpon>Form22_ViewPersonalFacultate.cs</DependentUpon>
     </Compile>
     <Compile Include="Form3 Inmatriculare_Editare Studenti.cs">
       <SubType>Form</SubType>
@@ -288,8 +317,23 @@
     <EmbeddedResource Include="Form16_Autentificare.resx">
       <DependentUpon>Form16_Autentificare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form17_MeniuProfesor.resx">
+      <DependentUpon>Form17_MeniuProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form18_MeniuStudent.resx">
+      <DependentUpon>Form18_MeniuStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2 Inscrieri_Editare Candidati.resx">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form20_RaportStudentNote.resx">
+      <DependentUpon>Form20_RaportStudentNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form21ReportStudentTranzactii.resx">
+      <DependentUpon>Form21ReportStudentTranzactii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form22_ViewPersonalFacultate.resx">
+      <DependentUpon>Form22_ViewPersonalFacultate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3 Inmatriculare_Editare Studenti.resx">
       <DependentUpon>Form3 Inmatriculare_Editare Studenti.cs</DependentUpon>
@@ -328,6 +372,8 @@
     <EmbeddedResource Include="Report4_ListaPrezentaExtra.rdlc" />
     <EmbeddedResource Include="Report5_StructuraAn.rdlc" />
     <EmbeddedResource Include="Report6_StructuraGrupa.rdlc" />
+    <EmbeddedResource Include="Report7_StudentNote.rdlc" />
+    <EmbeddedResource Include="Report8StudentTranzactii.rdlc" />
     <None Include="ClassDiagram.cd" />
     <None Include="Database_CSDataSet.xsc">
       <DependentUpon>Database_CSDataSet.xsd</DependentUpon>
@@ -372,6 +418,17 @@
     </None>
     <None Include="DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4StudentReports.xsc">
+      <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4StudentReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4StudentReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet4StudentReports.xss">
+      <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
