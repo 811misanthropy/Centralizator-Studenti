@@ -35,7 +35,6 @@ namespace Centralizator_Studenti
             {
                 button15.Visible = true;
                 button7.Visible = true;
-                button8.Visible = true;
             }
         }
 
@@ -78,15 +77,10 @@ namespace Centralizator_Studenti
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form8_View_Discipline f8 = new Form8_View_Discipline();
-            f8.ShowDialog();
+            Form17_MeniuProfesor f17 = new Form17_MeniuProfesor();
+            f17.ShowDialog();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Form9_SitAcademiceInput f9 = new Form9_SitAcademiceInput();
-            f9.ShowDialog();
-        }
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -133,6 +127,30 @@ namespace Centralizator_Studenti
         {
             Form22_ViewPersonalFacultate f22 = new Form22_ViewPersonalFacultate();
             f22.ShowDialog();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Form25NrStudentiPerAn f25 = new Form25NrStudentiPerAn();
+            f25.ShowDialog();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Form19 f19 = new Form19();
+            f19.ShowDialog();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Form24ReportStudentiDupaOrigine f24 = new Form24ReportStudentiDupaOrigine();
+            f24.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form26ViewLicee f26 = new Form26ViewLicee();
+            f26.ShowDialog();
         }
     }
 }

@@ -118,6 +118,7 @@
     <Compile Include="ClassCandidati.cs" />
     <Compile Include="ClassDiscipline.cs" />
     <Compile Include="ClassGlobalVar.cs" />
+    <Compile Include="ClassLicee.cs" />
     <Compile Include="ClassPrezentaExtra.cs" />
     <Compile Include="ClassSituatiiAcademice.cs" />
     <Compile Include="ClassStudenti.cs" />
@@ -155,6 +156,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet5DataPerFacultate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet5DataPerFacultate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet6Profesor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet6Profesor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -246,6 +257,42 @@
     <Compile Include="Form22_ViewPersonalFacultate.Designer.cs">
       <DependentUpon>Form22_ViewPersonalFacultate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form23_ReportStudentPrezentaExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form23_ReportStudentPrezentaExtra.Designer.cs">
+      <DependentUpon>Form23_ReportStudentPrezentaExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form24ReportStudentiDupaOrigine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form24ReportStudentiDupaOrigine.Designer.cs">
+      <DependentUpon>Form24ReportStudentiDupaOrigine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form25NrStudentiPerAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form25NrStudentiPerAn.Designer.cs">
+      <DependentUpon>Form25NrStudentiPerAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form26ViewLicee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form26ViewLicee.Designer.cs">
+      <DependentUpon>Form26ViewLicee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form27RaportProfesorPrezenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form27RaportProfesorPrezenta.Designer.cs">
+      <DependentUpon>Form27RaportProfesorPrezenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form28RaportProfesorNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form28RaportProfesorNote.Designer.cs">
+      <DependentUpon>Form28RaportProfesorNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form3 Inmatriculare_Editare Studenti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +370,9 @@
     <EmbeddedResource Include="Form18_MeniuStudent.resx">
       <DependentUpon>Form18_MeniuStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form19.resx">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2 Inscrieri_Editare Candidati.resx">
       <DependentUpon>Form2 Inscrieri_Editare Candidati.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +384,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form22_ViewPersonalFacultate.resx">
       <DependentUpon>Form22_ViewPersonalFacultate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form23_ReportStudentPrezentaExtra.resx">
+      <DependentUpon>Form23_ReportStudentPrezentaExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form24ReportStudentiDupaOrigine.resx">
+      <DependentUpon>Form24ReportStudentiDupaOrigine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form25NrStudentiPerAn.resx">
+      <DependentUpon>Form25NrStudentiPerAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form26ViewLicee.resx">
+      <DependentUpon>Form26ViewLicee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27RaportProfesorPrezenta.resx">
+      <DependentUpon>Form27RaportProfesorPrezenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28RaportProfesorNote.resx">
+      <DependentUpon>Form28RaportProfesorNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3 Inmatriculare_Editare Studenti.resx">
       <DependentUpon>Form3 Inmatriculare_Editare Studenti.cs</DependentUpon>
@@ -367,6 +435,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10NrStudentiPerAnAcademic.rdlc" />
+    <EmbeddedResource Include="Report11IncomePerAnAcademic.rdlc" />
+    <EmbeddedResource Include="Report12NrStudentiDupaProvenienta.rdlc" />
+    <EmbeddedResource Include="Report13ProfesorPrezenta.rdlc" />
+    <EmbeddedResource Include="Report14ProfesorNote.rdlc" />
     <EmbeddedResource Include="Report2_ListaAdmitere.rdlc" />
     <EmbeddedResource Include="Report3_ConditiiBursa.rdlc" />
     <EmbeddedResource Include="Report4_ListaPrezentaExtra.rdlc" />
@@ -374,6 +447,7 @@
     <EmbeddedResource Include="Report6_StructuraGrupa.rdlc" />
     <EmbeddedResource Include="Report7_StudentNote.rdlc" />
     <EmbeddedResource Include="Report8StudentTranzactii.rdlc" />
+    <EmbeddedResource Include="Report9_StudentPrezentaExtra.rdlc" />
     <None Include="ClassDiagram.cd" />
     <None Include="Database_CSDataSet.xsc">
       <DependentUpon>Database_CSDataSet.xsd</DependentUpon>
@@ -429,6 +503,28 @@
     </None>
     <None Include="DataSet4StudentReports.xss">
       <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet5DataPerFacultate.xsc">
+      <DependentUpon>DataSet5DataPerFacultate.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet5DataPerFacultate.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet5DataPerFacultate.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet5DataPerFacultate.xss">
+      <DependentUpon>DataSet5DataPerFacultate.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet6Profesor.xsc">
+      <DependentUpon>DataSet6Profesor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet6Profesor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6Profesor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet6Profesor.xss">
+      <DependentUpon>DataSet6Profesor.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

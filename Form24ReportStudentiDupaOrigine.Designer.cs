@@ -1,6 +1,6 @@
 ﻿namespace Centralizator_Studenti
 {
-    partial class Form19
+    partial class Form24ReportStudentiDupaOrigine
     {
         /// <summary>
         /// Required designer variable.
@@ -32,23 +32,23 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet5DataPerFacultate = new Centralizator_Studenti.DataSet5DataPerFacultate();
-            this.dataTableCastiguriAnualeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataTableCastiguriAnualeTableAdapter = new Centralizator_Studenti.DataSet5DataPerFacultateTableAdapters.DataTableCastiguriAnualeTableAdapter();
+            this.dataTableNrCandidPerLiceuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableNrCandidPerLiceuTableAdapter = new Centralizator_Studenti.DataSet5DataPerFacultateTableAdapters.DataTableNrCandidPerLiceuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableCastiguriAnualeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableNrCandidPerLiceuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.dataTableCastiguriAnualeBindingSource;
+            reportDataSource1.Value = this.dataTableNrCandidPerLiceuBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report11IncomePerAnAcademic.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report12NrStudentiDupaProvenienta.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(631, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(632, 450);
             this.reportViewer1.TabIndex = 0;
             // 
             // dataSet5DataPerFacultate
@@ -56,26 +56,26 @@
             this.dataSet5DataPerFacultate.DataSetName = "DataSet5DataPerFacultate";
             this.dataSet5DataPerFacultate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataTableCastiguriAnualeBindingSource
+            // dataTableNrCandidPerLiceuBindingSource
             // 
-            this.dataTableCastiguriAnualeBindingSource.DataMember = "DataTableCastiguriAnuale";
-            this.dataTableCastiguriAnualeBindingSource.DataSource = this.dataSet5DataPerFacultate;
+            this.dataTableNrCandidPerLiceuBindingSource.DataMember = "DataTableNrCandidPerLiceu";
+            this.dataTableNrCandidPerLiceuBindingSource.DataSource = this.dataSet5DataPerFacultate;
             // 
-            // dataTableCastiguriAnualeTableAdapter
+            // dataTableNrCandidPerLiceuTableAdapter
             // 
-            this.dataTableCastiguriAnualeTableAdapter.ClearBeforeFill = true;
+            this.dataTableNrCandidPerLiceuTableAdapter.ClearBeforeFill = true;
             // 
-            // Form19
+            // Form24ReportStudentiDupaOrigine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 450);
+            this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "Form19";
-            this.Text = "Form19_RaportStudentTaxe";
-            this.Load += new System.EventHandler(this.Form19_Load);
+            this.Name = "Form24ReportStudentiDupaOrigine";
+            this.Text = "Form24ReportStudentiDupaOrigine";
+            this.Load += new System.EventHandler(this.Form24ReportStudentiPerAnAcademic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableCastiguriAnualeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableNrCandidPerLiceuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dataTableNrCandidPerLiceuBindingSource;
         private DataSet5DataPerFacultate dataSet5DataPerFacultate;
-        private System.Windows.Forms.BindingSource dataTableCastiguriAnualeBindingSource;
-        private DataSet5DataPerFacultateTableAdapters.DataTableCastiguriAnualeTableAdapter dataTableCastiguriAnualeTableAdapter;
+        private DataSet5DataPerFacultateTableAdapters.DataTableNrCandidPerLiceuTableAdapter dataTableNrCandidPerLiceuTableAdapter;
     }
 }

@@ -167,18 +167,23 @@ namespace Centralizator_Studenti
         //button transfer decan
         private void button6_Click(object sender, EventArgs e)
         {
-            if (button6.Text == "Transfer Decan")
+            if ((listBox1.SelectedItems[0] as ClassCadreFacultate)._Activ == "Activ")
             {
-                MessageBox.Show("Pentru a confirma transferul pozitiei de decan va trebuii sa apasati pe butonul * de langa caseta titlu, apasati inca o data acest buton pentru a anula!");
-                button5.Visible = true;
-                button6.Text = "Anulare Transfer";
+                if (button6.Text == "Transfer Decan")
+                {
+                    MessageBox.Show("Pentru a confirma transferul pozitiei de decan va trebuii sa apasati pe butonul * de langa caseta titlu, apasati inca o data acest buton pentru a anula!");
+                    button5.Visible = true;
+                    button6.Text = "Anulare Transfer";
+                }
+                else
+                {
+                    MessageBox.Show("Transferul pozitiei de decan a fost anulat!");
+                    button5.Visible = false;
+                    button6.Text = "Transfer Decan";
+                }
             }
             else
-            {
-                MessageBox.Show("Transferul pozitiei de decan a fost anulat!");
-                button5.Visible = false;
-                button6.Text = "Transfer Decan";
-            }
+                MessageBox.Show("Un cadru inactiv nu poate primi pozitia de decan (editati prima data statusul cadrului)!");
         }
 
         //button * (confirmare transfer)
@@ -229,7 +234,7 @@ namespace Centralizator_Studenti
                 }
                 button4_Click(sender, e);
                 MessageBox.Show("Pozitia de Decan a fost transferata cu succes!");
-
+                ClassGlobalVar.account = new ClassAccount(cfdn._IDCF,cfdn._CFEmail,cfdn._CFPassw,cfdn._CFNume,cfdn._CFTitlu,cfdn._Activ);
             }
         }
     }

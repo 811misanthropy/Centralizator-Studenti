@@ -16,5 +16,13 @@ namespace Centralizator_Studenti
         {
             InitializeComponent();
         }
+
+        private void Form19_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet5DataPerFacultate.DataTableCastiguriAnuale' table. You can move, or remove it, as needed.
+            this.dataTableCastiguriAnualeTableAdapter.Fill(this.dataSet5DataPerFacultate.DataTableCastiguriAnuale);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

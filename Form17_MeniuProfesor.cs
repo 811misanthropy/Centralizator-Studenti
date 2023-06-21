@@ -33,5 +33,17 @@ namespace Centralizator_Studenti
             Form9_SitAcademiceInput f9 = new Form9_SitAcademiceInput();
             f9.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form28RaportProfesorNote f28 = new Form28RaportProfesorNote();
+            f28.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form27RaportProfesorPrezenta f27 = new Form27RaportProfesorPrezenta();
+            f27.ShowDialog();
+        }
     }
 }

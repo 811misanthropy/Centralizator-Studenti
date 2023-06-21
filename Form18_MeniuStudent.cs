@@ -33,5 +33,11 @@ namespace Centralizator_Studenti
             Form20_RaportStudentNote f20 = new Form20_RaportStudentNote();
             f20.ShowDialog();
         }
+        //vizualizare prezenta activitati extracuriculare student
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form23_ReportStudentPrezentaExtra f23 = new Form23_ReportStudentPrezentaExtra();
+            f23.ShowDialog();
+        }
     }
 }
