@@ -20,28 +20,34 @@ namespace Centralizator_Studenti
         }
 
         private void Form7_Tranzactii_Report_Load(object sender, EventArgs e)
-        {
-
-            // TODO: This line of code loads data into the 'dataSet2.DataTable1' table. You can move, or remove it, as needed.
-            
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
-                this.dataTable1TableAdapter.Fill(this.dataSet2.DataTable1, textBox1.Text);
-                this.dataTable11TableAdapter.Fill(this.dataSet2.DataTable11, textBox1.Text);
+                listBox1.Items.Clear();
+                foreach(ClassCandidati cand in ClassGlobalVar.listCandid)
+                {
+                    if(cand._AnCandi.ToString() == textBox1.Text)
+                    {
+                        listBox1.Items.Add(cand);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Introduceti anul academic!");
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedItems.Count == 1)
+            {
+                this.dataTable1TableAdapter.Fill(this.dataSet2.DataTable1, (listBox1.SelectedItems[0] as ClassCandidati)._NrDosar);
+                this.dataTable11TableAdapter.Fill(this.dataSet2.DataTable11, (listBox1.SelectedItems[0] as ClassCandidati)._NrDosar);
 
                 this.reportViewer1.RefreshReport();
             }
-            else
-                MessageBox.Show("Introduceti numarul de dosat!");
         }
     }
 }

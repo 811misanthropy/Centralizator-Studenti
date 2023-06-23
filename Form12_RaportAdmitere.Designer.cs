@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet3 = new Centralizator_Studenti.DataSet3();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet3 = new Centralizator_Studenti.DataSet3();
-            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new Centralizator_Studenti.DataSet3TableAdapters.DataTable1TableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // DataTable1BindingSource
             // 
-            reportDataSource4.Name = "DataSet3_PentruAdmitere";
-            reportDataSource4.Value = this.DataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report2_ListaAdmitere.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(75, 74);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(683, 352);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet3BindingSource
-            // 
-            this.dataSet3BindingSource.DataSource = this.dataSet3;
-            this.dataSet3BindingSource.Position = 0;
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.dataSet3;
             // 
             // dataSet3
             // 
             this.dataSet3.DataSetName = "DataSet3";
             this.dataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // DataTable1BindingSource
+            // reportViewer1
             // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.dataSet3;
+            reportDataSource1.Name = "DataSet3_PentruAdmitere";
+            reportDataSource1.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report2_ListaAdmitere.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 38);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(943, 562);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // dataSet3BindingSource
+            // 
+            this.dataSet3BindingSource.DataSource = this.dataSet3;
+            this.dataSet3BindingSource.Position = 0;
             // 
             // dataTable1BindingSource1
             // 
@@ -83,7 +83,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(153, 8);
+            this.textBox1.Location = new System.Drawing.Point(107, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -91,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 11);
+            this.label1.Location = new System.Drawing.Point(9, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(283, 6);
+            this.button1.Location = new System.Drawing.Point(213, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -111,7 +111,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(967, 612);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -119,9 +120,9 @@
             this.Name = "Form12_RaportAdmitere";
             this.Text = "Form12_RaportAdmitere";
             this.Load += new System.EventHandler(this.Form12_RaportAdmitere_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

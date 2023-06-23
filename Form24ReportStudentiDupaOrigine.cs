@@ -19,8 +19,23 @@ namespace Centralizator_Studenti
 
         private void Form24ReportStudentiPerAnAcademic_Load(object sender, EventArgs e)
         {
+            foreach(ClassCandidati cand in ClassGlobalVar.listCandid)
+            {
+                if(cand._AnCandi != 0 && !comboBox1.Items.Contains(cand._AnCandi.ToString()))
+                {
+                    comboBox1.Items.Add(cand._AnCandi.ToString());
+                }
+            }
+        }
 
-            this.reportViewer1.RefreshReport();
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Items.Contains(comboBox1.Text))
+            {
+                this.dataTableNrCandidPerLiceuTableAdapter.Fill(this.dataSet5DataPerFacultate.DataTableNrCandidPerLiceu, comboBox1.Text);
+
+                this.reportViewer1.RefreshReport();
+            }
         }
     }
 }

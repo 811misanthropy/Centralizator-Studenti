@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.79861in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.52083in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -418,23 +418,24 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCandidatiTranzactiiModele</DataSetName>
-        <Top>0.06944in</Top>
+        <Top>1.42361in</Top>
+        <Left>0.10417in</Left>
         <Height>0.5in</Height>
-        <Width>6in</Width>
+        <Width>8.31944in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox2">
+      <Textbox Name="Textbox1">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Semnatura:</Value>
+                <Value>RAPORTUL TRANZACTIILOR PENTRU:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -442,10 +443,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.09958in</Top>
-        <Left>3.84374in</Left>
+        <Top>0.34376in</Top>
+        <Left>2.84374in</Left>
         <Height>0.25in</Height>
-        <Width>1.91667in</Width>
+        <Width>2.57987in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -457,14 +458,146 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="NrDosar1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!NrDosar.Value, "DataSetDataCandidati")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NrDosar1</rd:DefaultName>
+        <Top>0.96181in</Top>
+        <Left>0.58207in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="InitialaTata">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!InitialaTata.Value, "DataSetDataCandidati")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>InitialaTata</rd:DefaultName>
+        <Top>0.96181in</Top>
+        <Left>2.59596in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Nume">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Nume.Value, "DataSetDataCandidati")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Nume</rd:DefaultName>
+        <Top>0.96181in</Top>
+        <Left>1.59596in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line1">
+        <Top>1.28126in</Top>
+        <Left>0.46874in</Left>
+        <Height>0in</Height>
+        <Width>4.375in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Prenume">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Prenume.Value, "DataSetDataCandidati")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Prenume</rd:DefaultName>
+        <Top>0.96181in</Top>
+        <Left>3.59596in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.47792in</Height>
+    <Height>13.91392cm</Height>
     <Style />
   </Body>
-  <Width>6.155in</Width>
+  <Width>21.6397cm</Width>
   <Page>
     <PageHeader>
-      <Height>0.92583in</Height>
+      <Height>3.09244cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -472,8 +605,8 @@
           <Source>Embedded</Source>
           <Value>Logo2</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.02778in</Top>
-          <Left>5in</Left>
+          <Top>0.11996in</Top>
+          <Left>7.04167in</Left>
           <Height>0.74528in</Height>
           <Width>0.76041in</Width>
           <Style>
@@ -482,25 +615,25 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox11">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Raport de tranzactii pentru:</Value>
+                  <Value>Universitatea Romano-Americana</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.13417in</Top>
-          <Left>0.72792in</Left>
-          <Height>0.25in</Height>
-          <Width>1.91667in</Width>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>0.30471cm</Top>
+          <Left>0.26458cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.70688cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -512,29 +645,29 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="NrDosar1">
+        <Textbox Name="Textbox13">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Sum(Fields!NrDosar.Value, "DataSetDataCandidati")</Value>
+                  <Value>Facultatea de Informatica Manageriala</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>NrDosar1</rd:DefaultName>
-          <Top>0.52306in</Top>
-          <Left>0.30083in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>0.93998cm</Top>
+          <Left>0.26458cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.70688cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -542,29 +675,29 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="InitialaTata">
+        <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!InitialaTata.Value, "DataSetDataCandidati")</Value>
+                  <Value>Specializarea: Informatica economica</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>InitialaTata</rd:DefaultName>
-          <Top>0.52306in</Top>
-          <Left>2.32861in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>1.53998cm</Top>
+          <Left>0.26458cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.70688cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -572,29 +705,29 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Prenume">
+        <Textbox Name="Textbox17">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Prenume.Value, "DataSetDataCandidati")</Value>
+                  <Value>Invatamant cu frecventa</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Prenume</rd:DefaultName>
-          <Top>0.52306in</Top>
-          <Left>3.3425in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>2.13998cm</Top>
+          <Left>0.26458cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.70688cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -602,42 +735,12 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Nume">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Nume.Value, "DataSetDataCandidati")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Nume</rd:DefaultName>
-          <Top>0.52306in</Top>
-          <Left>1.31472in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Line Name="Line1">
-          <Top>0.84251in</Top>
-          <Left>0.1875in</Left>
+        <Line Name="Line2">
+          <Top>1.14818in</Top>
+          <Left>0.22096in</Left>
           <Height>0in</Height>
-          <Width>4.375in</Width>
-          <ZIndex>6</ZIndex>
+          <Width>7.20265in</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -651,10 +754,13 @@
         </Border>
       </Style>
     </PageHeader>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -833,6 +939,6 @@ AJBbhXMzlD0H9mvQfHipXCv61t7cEmOKjIvhwe6h5DjxpsY0AehGmliEC3NYbUlmysGUFBoGMYui644A
 xxU30AOg/Dn6ZGDPCG4SgMc18H+R3KoXFC0GLvhQM9XK94vDBKDvZax7B7HIEa2CA+S4IMZRngE0AvZW4BfP5n9Nkybd5VDtG4nE2hAyXAsad92aU7zMAzQoTNmkxEjeb1GQ8ABg/tnrPAQuIyPRLNffTuvABGA7Cd7ZbaEtRSwoNBCAUl3NSEh2dO+ezAlvkb9YUlxJScmxvLyD9hAOEnwOc9NsTONnE20bjglA/5wXc1QhIgETgCEy0eZj+qcETAD657yYowoRCZgADJGJNh/TPyVgAtA/58UcVYhIwARgiEy0+Zj+KQETgP45L+aoQkQCJgBDZKLNx/RPCZgA9M95MUcVIhIwARgiE20+pn9KwASgf86LOaoQkYAJwBCZaPMx/VMCJgD9c17MUYWIBEwAhshEm4/pnxIwAeif82KOKkQkYAIwRCbafEz/lIAJQP+cF3NUISIBE4AhMtHmY/qnBP4//Oq41/1siWIAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>ab6620af-3848-40fb-8af4-97f61c2173b5</rd:ReportID>
 </Report>

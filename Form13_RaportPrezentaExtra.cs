@@ -18,18 +18,31 @@ namespace Centralizator_Studenti
         }
 
         private void Form13_RaportPrezentaExtra_Load(object sender, EventArgs e)
-        {
-            
-        }
+        { }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.DataTable1' table. You can move, or remove it, as needed.
-            this.dataTable1TableAdapter.Fill(this.dataSet1.DataTable1, textBox1.Text);
-            // TODO: This line of code loads data into the 'dataSet1.DataTable2' table. You can move, or remove it, as needed.
-            this.dataTable2TableAdapter.Fill(this.dataSet1.DataTable2, textBox1.Text);
+            if (textBox1.Text != "")
+            {
+                listBox1.Items.Clear();
+                foreach(ClassActivitatiextra ae in ClassGlobalVar.listActExtr)
+                {
+                    if(ae._AnAcadAplicabil == textBox1.Text)
+                        listBox1.Items.Add(ae);
+                }
+            }
+            else
+                MessageBox.Show("Introduceti anul academic in caseta!");
+        }
 
-            this.reportViewer1.RefreshReport();
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedItems.Count == 1)
+            {
+                this.dataTable1TableAdapter.Fill(this.dataSet1.DataTable1, (listBox1.SelectedItems[0] as ClassActivitatiextra)._IdActivExtra);
+                this.dataTable2TableAdapter.Fill(this.dataSet1.DataTable2, (listBox1.SelectedItems[0] as ClassActivitatiextra)._IdActivExtra);
+                this.reportViewer1.RefreshReport();
+            }
         }
     }
 }

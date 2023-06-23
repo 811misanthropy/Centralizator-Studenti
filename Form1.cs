@@ -152,5 +152,11 @@ namespace Centralizator_Studenti
             Form26ViewLicee f26 = new Form26ViewLicee();
             f26.ShowDialog();
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Form29RaportAnualDiscipline f29 = new Form29RaportAnualDiscipline();
+            f29.ShowDialog();
+        }
     }
 }

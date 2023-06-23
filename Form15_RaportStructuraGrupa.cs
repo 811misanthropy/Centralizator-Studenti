@@ -19,15 +19,23 @@ namespace Centralizator_Studenti
 
         private void Form15_RaportStructuraGrupa_Load(object sender, EventArgs e)
         {
-            
+            foreach(ClassStudenti stud in ClassGlobalVar.listStud)
+            {
+                if(stud._Grupa!=0 && stud._Grupa!=999 && !comboBox1.Items.Contains(stud._Grupa))
+                {
+                    comboBox1.Items.Add(stud._Grupa.ToString());
+                }
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.DataTable4' table. You can move, or remove it, as needed.
-            this.dataTable4TableAdapter.Fill(this.dataSet1.DataTable4, textBox1.Text);
+            if(comboBox1.Items.Contains(comboBox1.Text))
+            {
+                this.dataTable4TableAdapter.Fill(this.dataSet1.DataTable4, comboBox1.Text);
 
-            this.reportViewer1.RefreshReport();
+                this.reportViewer1.RefreshReport();
+            }    
         }
     }
 }

@@ -30,16 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet4StudentReports = new Centralizator_Studenti.DataSet4StudentReports();
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet4StudentReports = new Centralizator_Studenti.DataSet4StudentReports();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTable2TableAdapter = new Centralizator_Studenti.DataSet4StudentReportsTableAdapters.DataTable2TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTable2BindingSource
+            // 
+            this.dataTable2BindingSource.DataMember = "DataTable2";
+            this.dataTable2BindingSource.DataSource = this.dataSet4StudentReports;
+            // 
+            // dataSet4StudentReports
+            // 
+            this.dataSet4StudentReports.DataSetName = "DataSet4StudentReports";
+            this.dataSet4StudentReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1StudentiTranzactii";
             reportDataSource1.Value = this.dataTable2BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -47,18 +58,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(801, 455);
+            this.reportViewer1.Size = new System.Drawing.Size(860, 614);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet4StudentReports
-            // 
-            this.dataSet4StudentReports.DataSetName = "DataSet4StudentReports";
-            this.dataSet4StudentReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable2BindingSource
-            // 
-            this.dataTable2BindingSource.DataMember = "DataTable2";
-            this.dataTable2BindingSource.DataSource = this.dataSet4StudentReports;
             // 
             // dataTable2TableAdapter
             // 
@@ -68,13 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(860, 614);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form21ReportStudentTranzactii";
             this.Text = "Form21ReportStudentTranzactii";
             this.Load += new System.EventHandler(this.Form21ReportStudentTranzactii_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).EndInit();
             this.ResumeLayout(false);
 
         }

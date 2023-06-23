@@ -56,10 +56,10 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 199);
+            this.label4.Location = new System.Drawing.Point(77, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(415, 13);
             this.label4.TabIndex = 5;
@@ -108,15 +108,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(558, 199);
+            this.label5.Location = new System.Drawing.Point(691, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(415, 13);
+            this.label5.Size = new System.Drawing.Size(313, 13);
             this.label5.TabIndex = 6;
-            this.label5.Text = "____________________________________________________________________";
+            this.label5.Text = "___________________________________________________";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(572, 229);
+            this.button1.Location = new System.Drawing.Point(718, 200);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 41);
             this.button1.TabIndex = 7;
@@ -128,7 +128,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-3, 212);
+            this.label6.Location = new System.Drawing.Point(38, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 108);
             this.label6.TabIndex = 8;
@@ -136,7 +136,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(718, 229);
+            this.button2.Location = new System.Drawing.Point(864, 200);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 41);
             this.button2.TabIndex = 9;
@@ -146,7 +146,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(572, 279);
+            this.button3.Location = new System.Drawing.Point(718, 250);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 41);
             this.button3.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(513, 212);
+            this.label7.Location = new System.Drawing.Point(659, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 108);
             this.label7.TabIndex = 11;
@@ -167,7 +167,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(561, 183);
+            this.label8.Location = new System.Drawing.Point(691, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 12;
@@ -176,7 +176,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 183);
+            this.label9.Location = new System.Drawing.Point(64, 183);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 13;
@@ -214,7 +214,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(51, 231);
+            this.button6.Location = new System.Drawing.Point(92, 202);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(141, 37);
             this.button6.TabIndex = 17;
@@ -224,7 +224,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(711, 116);
+            this.button7.Location = new System.Drawing.Point(756, 94);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(140, 37);
             this.button7.TabIndex = 18;
@@ -245,7 +245,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(718, 281);
+            this.button10.Location = new System.Drawing.Point(864, 252);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(140, 39);
             this.button10.TabIndex = 21;
@@ -255,7 +255,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(198, 231);
+            this.button11.Location = new System.Drawing.Point(239, 202);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(141, 37);
             this.button11.TabIndex = 22;
@@ -265,7 +265,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(345, 231);
+            this.button12.Location = new System.Drawing.Point(386, 202);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(141, 37);
             this.button12.TabIndex = 23;
@@ -275,7 +275,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(51, 274);
+            this.button13.Location = new System.Drawing.Point(92, 245);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(141, 37);
             this.button13.TabIndex = 24;
@@ -285,7 +285,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(198, 274);
+            this.button14.Location = new System.Drawing.Point(239, 245);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(141, 37);
             this.button14.TabIndex = 25;
@@ -295,7 +295,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(711, 159);
+            this.button15.Location = new System.Drawing.Point(756, 137);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(140, 37);
             this.button15.TabIndex = 26;
@@ -315,17 +315,17 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(51, 317);
+            this.button16.Location = new System.Drawing.Point(92, 288);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(141, 37);
             this.button16.TabIndex = 28;
-            this.button16.Text = "Raport Studenti Pe An Academic";
+            this.button16.Text = "Raport Studenti Pe An De Studiu";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(198, 317);
+            this.button17.Location = new System.Drawing.Point(239, 288);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(141, 37);
             this.button17.TabIndex = 29;
@@ -335,35 +335,13 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(345, 317);
+            this.button18.Location = new System.Drawing.Point(386, 288);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(141, 37);
             this.button18.TabIndex = 30;
-            this.button18.Text = "Raport Studenti Dupa Liceu";
+            this.button18.Text = "Raport Candidati Dupa Liceu De Provenienta";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Centralizator_Studenti.Properties.Resources._2022___v3_Amb_Recrutare_RO__BannerWeb;
-            this.pictureBox2.Location = new System.Drawing.Point(54, 382);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(958, 297);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Centralizator_Studenti.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(857, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // button8
             // 
@@ -377,19 +355,42 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(345, 289);
+            this.button19.Location = new System.Drawing.Point(386, 245);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.Size = new System.Drawing.Size(141, 37);
             this.button19.TabIndex = 32;
-            this.button19.Text = "button19";
+            this.button19.Text = "Raport Anual Discipline";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::Centralizator_Studenti.Properties.Resources._2022___v3_Amb_Recrutare_RO__BannerWeb;
+            this.pictureBox2.Location = new System.Drawing.Point(54, 353);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(958, 297);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Centralizator_Studenti.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(902, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1069, 691);
+            this.ClientSize = new System.Drawing.Size(1069, 662);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button18);

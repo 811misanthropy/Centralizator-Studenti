@@ -18,16 +18,17 @@ namespace Centralizator_Studenti
         }
 
         private void Form14_RaportStructuraAn_Load(object sender, EventArgs e)
-        {
-            
-        }
+        { }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.DataTable3' table. You can move, or remove it, as needed.
-            this.dataTable3TableAdapter.Fill(this.dataSet1.DataTable3, textBox1.Text);
+            if(comboBox1.Items.Contains(comboBox1.Text))
+            {
+                // TODO: This line of code loads data into the 'dataSet1.DataTable3' table. You can move, or remove it, as needed.
+                this.dataTable3TableAdapter.Fill(this.dataSet1.DataTable3, comboBox1.Text);
 
-            this.reportViewer1.RefreshReport();
+                this.reportViewer1.RefreshReport();
+            }
         }
     }
 }

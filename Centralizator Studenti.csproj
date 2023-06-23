@@ -293,6 +293,12 @@
     <Compile Include="Form28RaportProfesorNote.Designer.cs">
       <DependentUpon>Form28RaportProfesorNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form29RaportAnualDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form29RaportAnualDiscipline.Designer.cs">
+      <DependentUpon>Form29RaportAnualDiscipline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form3 Inmatriculare_Editare Studenti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,9 @@
     <EmbeddedResource Include="Form28RaportProfesorNote.resx">
       <DependentUpon>Form28RaportProfesorNote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form29RaportAnualDiscipline.resx">
+      <DependentUpon>Form29RaportAnualDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form3 Inmatriculare_Editare Studenti.resx">
       <DependentUpon>Form3 Inmatriculare_Editare Studenti.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,7 +450,7 @@
     <EmbeddedResource Include="Report13ProfesorPrezenta.rdlc" />
     <EmbeddedResource Include="Report14ProfesorNote.rdlc" />
     <EmbeddedResource Include="Report2_ListaAdmitere.rdlc" />
-    <EmbeddedResource Include="Report3_ConditiiBursa.rdlc" />
+    <EmbeddedResource Include="Report3RaportProfesor.rdlc" />
     <EmbeddedResource Include="Report4_ListaPrezentaExtra.rdlc" />
     <EmbeddedResource Include="Report5_StructuraAn.rdlc" />
     <EmbeddedResource Include="Report6_StructuraGrupa.rdlc" />

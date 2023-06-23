@@ -33,7 +33,6 @@ namespace Centralizator_Studenti
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string a = (comboBox1.SelectedItem as ClassDiscipline)._IdDisciplna;
-            // TODO: This line of code loads data into the 'dataSet6Profesor.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.Fill(this.dataSet6Profesor.DataTable1,a);
 
             this.reportViewer1.RefreshReport();

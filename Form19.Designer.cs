@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet5DataPerFacultate = new Centralizator_Studenti.DataSet5DataPerFacultate();
             this.dataTableCastiguriAnualeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet5DataPerFacultate = new Centralizator_Studenti.DataSet5DataPerFacultate();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTableCastiguriAnualeTableAdapter = new Centralizator_Studenti.DataSet5DataPerFacultateTableAdapters.DataTableCastiguriAnualeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableCastiguriAnualeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTableCastiguriAnualeBindingSource
+            // 
+            this.dataTableCastiguriAnualeBindingSource.DataMember = "DataTableCastiguriAnuale";
+            this.dataTableCastiguriAnualeBindingSource.DataSource = this.dataSet5DataPerFacultate;
+            // 
+            // dataSet5DataPerFacultate
+            // 
+            this.dataSet5DataPerFacultate.DataSetName = "DataSet5DataPerFacultate";
+            this.dataSet5DataPerFacultate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -48,18 +58,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(631, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(892, 614);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet5DataPerFacultate
-            // 
-            this.dataSet5DataPerFacultate.DataSetName = "DataSet5DataPerFacultate";
-            this.dataSet5DataPerFacultate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTableCastiguriAnualeBindingSource
-            // 
-            this.dataTableCastiguriAnualeBindingSource.DataMember = "DataTableCastiguriAnuale";
-            this.dataTableCastiguriAnualeBindingSource.DataSource = this.dataSet5DataPerFacultate;
             // 
             // dataTableCastiguriAnualeTableAdapter
             // 
@@ -69,13 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 450);
+            this.ClientSize = new System.Drawing.Size(892, 614);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form19";
             this.Text = "Form19_RaportStudentTaxe";
             this.Load += new System.EventHandler(this.Form19_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableCastiguriAnualeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).EndInit();
             this.ResumeLayout(false);
 
         }

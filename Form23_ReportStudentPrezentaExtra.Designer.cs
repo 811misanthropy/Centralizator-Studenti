@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet4StudentReports = new Centralizator_Studenti.DataSet4StudentReports();
             this.dataTable3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet4StudentReports = new Centralizator_Studenti.DataSet4StudentReports();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTable3TableAdapter = new Centralizator_Studenti.DataSet4StudentReportsTableAdapters.DataTable3TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTable3BindingSource
+            // 
+            this.dataTable3BindingSource.DataMember = "DataTable3";
+            this.dataTable3BindingSource.DataSource = this.dataSet4StudentReports;
+            // 
+            // dataSet4StudentReports
+            // 
+            this.dataSet4StudentReports.DataSetName = "DataSet4StudentReports";
+            this.dataSet4StudentReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -48,18 +58,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(628, 623);
+            this.reportViewer1.Size = new System.Drawing.Size(782, 623);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet4StudentReports
-            // 
-            this.dataSet4StudentReports.DataSetName = "DataSet4StudentReports";
-            this.dataSet4StudentReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable3BindingSource
-            // 
-            this.dataTable3BindingSource.DataMember = "DataTable3";
-            this.dataTable3BindingSource.DataSource = this.dataSet4StudentReports;
             // 
             // dataTable3TableAdapter
             // 
@@ -69,13 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 623);
+            this.ClientSize = new System.Drawing.Size(782, 623);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form23_ReportStudentPrezentaExtra";
             this.Text = "Form23_ReportStudentPrezentaExtra";
             this.Load += new System.EventHandler(this.Form23_ReportStudentPrezentaExtra_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4StudentReports)).EndInit();
             this.ResumeLayout(false);
 
         }

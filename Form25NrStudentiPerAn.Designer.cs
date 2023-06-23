@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet5DataPerFacultate = new Centralizator_Studenti.DataSet5DataPerFacultate();
             this.dataTableNrStudentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet5DataPerFacultate = new Centralizator_Studenti.DataSet5DataPerFacultate();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTableNrStudentiTableAdapter = new Centralizator_Studenti.DataSet5DataPerFacultateTableAdapters.DataTableNrStudentiTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableNrStudentiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTableNrStudentiBindingSource
+            // 
+            this.dataTableNrStudentiBindingSource.DataMember = "DataTableNrStudenti";
+            this.dataTableNrStudentiBindingSource.DataSource = this.dataSet5DataPerFacultate;
+            // 
+            // dataSet5DataPerFacultate
+            // 
+            this.dataSet5DataPerFacultate.DataSetName = "DataSet5DataPerFacultate";
+            this.dataSet5DataPerFacultate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -48,18 +58,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(628, 519);
+            this.reportViewer1.Size = new System.Drawing.Size(881, 604);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet5DataPerFacultate
-            // 
-            this.dataSet5DataPerFacultate.DataSetName = "DataSet5DataPerFacultate";
-            this.dataSet5DataPerFacultate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTableNrStudentiBindingSource
-            // 
-            this.dataTableNrStudentiBindingSource.DataMember = "DataTableNrStudenti";
-            this.dataTableNrStudentiBindingSource.DataSource = this.dataSet5DataPerFacultate;
             // 
             // dataTableNrStudentiTableAdapter
             // 
@@ -69,13 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 519);
+            this.ClientSize = new System.Drawing.Size(881, 604);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form25NrStudentiPerAn";
             this.Text = "Form25NrStudentiPerAn";
             this.Load += new System.EventHandler(this.Form25NrStudentiPerAn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableNrStudentiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5DataPerFacultate)).EndInit();
             this.ResumeLayout(false);
 
         }
