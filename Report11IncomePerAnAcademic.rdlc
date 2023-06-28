@@ -26,18 +26,22 @@
                           <TextRuns>
                             <TextRun>
                               <Value>ANUL</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -56,18 +60,22 @@
                           <TextRuns>
                             <TextRun>
                               <Value>CASTIGURI (EURO)</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -91,16 +99,19 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!IndexFormat.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>IndexFormat</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -121,16 +132,19 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TranzactiiPeAn.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TranzactiiPeAn</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -163,9 +177,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.76958in</Top>
-        <Left>2.00917in</Left>
+        <Left>0.9675in</Left>
         <Height>0.5in</Height>
-        <Width>2.98958in</Width>
+        <Width>2.98959in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -180,10 +194,14 @@
             <TextRuns>
               <TextRun>
                 <Value>CASTIGURI PER AN ACADEMIC</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -203,7 +221,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>13.57312cm</Height>
+    <Height>4.3127cm</Height>
     <Style />
   </Body>
   <Width>20.63432cm</Width>
@@ -235,7 +253,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Universitatea Romano-Americana</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -265,7 +285,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Facultatea de Informatica Manageriala</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -295,7 +317,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Specializarea: Informatica economica</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -325,7 +349,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Invatamant cu frecventa</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />

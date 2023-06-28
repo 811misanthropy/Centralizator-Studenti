@@ -100,6 +100,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -118,7 +122,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.groupBox1.Controls.Add(this.textBox26);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label10);
@@ -374,7 +378,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.groupBox2.Controls.Add(this.textBox28);
             this.groupBox2.Controls.Add(this.textBox27);
             this.groupBox2.Controls.Add(this.textBox25);
@@ -848,9 +852,10 @@
             // button1
             // 
             this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(19, 639);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 44);
+            this.button1.Size = new System.Drawing.Size(94, 44);
             this.button1.TabIndex = 3;
             this.button1.Text = "Precedentul";
             this.button1.UseVisualStyleBackColor = true;
@@ -858,9 +863,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1196, 639);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button2.Location = new System.Drawing.Point(1190, 639);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 44);
+            this.button2.Size = new System.Drawing.Size(85, 44);
             this.button2.TabIndex = 4;
             this.button2.Text = "Urmatorul";
             this.button2.UseVisualStyleBackColor = true;
@@ -868,7 +874,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(590, 639);
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button3.Location = new System.Drawing.Point(799, 639);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 44);
             this.button3.TabIndex = 5;
@@ -879,7 +886,8 @@
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(819, 639);
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button4.Location = new System.Drawing.Point(989, 639);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(79, 44);
             this.button4.TabIndex = 6;
@@ -890,17 +898,19 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(706, 639);
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button5.Location = new System.Drawing.Point(895, 639);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(79, 44);
             this.button5.TabIndex = 7;
-            this.button5.Text = "Abort";
+            this.button5.Text = "Renunta";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(468, 639);
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button6.Location = new System.Drawing.Point(694, 639);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(79, 44);
             this.button6.TabIndex = 8;
@@ -908,12 +918,57 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(333, 628);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 27);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label32.Location = new System.Drawing.Point(212, 630);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(115, 19);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Anul candidatului:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label33.Location = new System.Drawing.Point(193, 657);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(134, 19);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Dosarul candidatului:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Enabled = false;
+            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(333, 655);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(185, 27);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // Form2_Inscrieri_Editare_Candidati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1299, 695);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -1009,5 +1064,9 @@
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

@@ -157,6 +157,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet4StudentReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet5DataPerFacultate.cs">
+      <DependentUpon>DataSet5DataPerFacultate.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet5DataPerFacultate.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -938,9 +938,9 @@ namespace Centralizator_Studenti {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTableNrStudentiDataTable : global::System.Data.TypedTableBase<DataTableNrStudentiRow> {
             
-            private global::System.Data.DataColumn columnNrStudenti;
+            private global::System.Data.DataColumn columnAnulCandi;
             
-            private global::System.Data.DataColumn columnAn;
+            private global::System.Data.DataColumn columnNrStudentiPerAnAcad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -977,17 +977,17 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NrStudentiColumn {
+            public global::System.Data.DataColumn AnulCandiColumn {
                 get {
-                    return this.columnNrStudenti;
+                    return this.columnAnulCandi;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AnColumn {
+            public global::System.Data.DataColumn NrStudentiPerAnAcadColumn {
                 get {
-                    return this.columnAn;
+                    return this.columnNrStudentiPerAnAcad;
                 }
             }
             
@@ -1028,11 +1028,11 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTableNrStudentiRow AddDataTableNrStudentiRow(int NrStudenti, string An) {
+            public DataTableNrStudentiRow AddDataTableNrStudentiRow(int AnulCandi, int NrStudentiPerAnAcad) {
                 DataTableNrStudentiRow rowDataTableNrStudentiRow = ((DataTableNrStudentiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        NrStudenti,
-                        An};
+                        AnulCandi,
+                        NrStudentiPerAnAcad};
                 rowDataTableNrStudentiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTableNrStudentiRow);
                 return rowDataTableNrStudentiRow;
@@ -1055,18 +1055,17 @@ namespace Centralizator_Studenti {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNrStudenti = base.Columns["NrStudenti"];
-                this.columnAn = base.Columns["An"];
+                this.columnAnulCandi = base.Columns["AnulCandi"];
+                this.columnNrStudentiPerAnAcad = base.Columns["NrStudentiPerAnAcad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNrStudenti = new global::System.Data.DataColumn("NrStudenti", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNrStudenti);
-                this.columnAn = new global::System.Data.DataColumn("An", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAn);
-                this.columnAn.MaxLength = 255;
+                this.columnAnulCandi = new global::System.Data.DataColumn("AnulCandi", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnulCandi);
+                this.columnNrStudentiPerAnAcad = new global::System.Data.DataColumn("NrStudentiPerAnAcad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNrStudentiPerAnAcad);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1790,58 +1789,59 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int NrStudenti {
+            public int AnulCandi {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTableNrStudenti.NrStudentiColumn]));
+                        return ((int)(this[this.tableDataTableNrStudenti.AnulCandiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NrStudenti\' in table \'DataTableNrStudenti\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AnulCandi\' in table \'DataTableNrStudenti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTableNrStudenti.NrStudentiColumn] = value;
+                    this[this.tableDataTableNrStudenti.AnulCandiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string An {
+            public int NrStudentiPerAnAcad {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTableNrStudenti.AnColumn]));
+                        return ((int)(this[this.tableDataTableNrStudenti.NrStudentiPerAnAcadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'An\' in table \'DataTableNrStudenti\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NrStudentiPerAnAcad\' in table \'DataTableNrStudenti\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTableNrStudenti.AnColumn] = value;
+                    this[this.tableDataTableNrStudenti.NrStudentiPerAnAcadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNrStudentiNull() {
-                return this.IsNull(this.tableDataTableNrStudenti.NrStudentiColumn);
+            public bool IsAnulCandiNull() {
+                return this.IsNull(this.tableDataTableNrStudenti.AnulCandiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNrStudentiNull() {
-                this[this.tableDataTableNrStudenti.NrStudentiColumn] = global::System.Convert.DBNull;
+            public void SetAnulCandiNull() {
+                this[this.tableDataTableNrStudenti.AnulCandiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAnNull() {
-                return this.IsNull(this.tableDataTableNrStudenti.AnColumn);
+            public bool IsNrStudentiPerAnAcadNull() {
+                return this.IsNull(this.tableDataTableNrStudenti.NrStudentiPerAnAcadColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAnNull() {
-                this[this.tableDataTableNrStudenti.AnColumn] = global::System.Convert.DBNull;
+            public void SetNrStudentiPerAnAcadNull() {
+                this[this.tableDataTableNrStudenti.NrStudentiPerAnAcadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2769,8 +2769,8 @@ ORDER BY T_ModeleDeTaxa.IndexFormat DESC";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTableNrStudenti";
-            tableMapping.ColumnMappings.Add("NrStudenti", "NrStudenti");
-            tableMapping.ColumnMappings.Add("An", "An");
+            tableMapping.ColumnMappings.Add("AnulCandi", "AnulCandi");
+            tableMapping.ColumnMappings.Add("NrStudentiPerAnAcad", "NrStudentiPerAnAcad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2787,8 +2787,12 @@ ORDER BY T_ModeleDeTaxa.IndexFormat DESC";
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT       COUNT(NrMatricol) AS NrStudenti, An\r\nFROM            T_Studenti\r\nWHE" +
-                "RE        (An > \'0\') AND (An < \'4\')\r\nGROUP BY An";
+            this._commandCollection[0].CommandText = @"SELECT       T_Dosare.AnulCandi, COUNT(T_Studenti.NrMatricol) AS NrStudentiPerAnAcad
+FROM            ((T_Candidati INNER JOIN
+                         T_Studenti ON T_Candidati.NrDosar = T_Studenti.FK_NrDosar) INNER JOIN
+                         T_Dosare ON T_Candidati.NrDosar = T_Dosare.NrDosar)
+GROUP BY T_Dosare.AnulCandi
+ORDER BY T_Dosare.AnulCandi DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -319,7 +319,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(141, 37);
             this.button16.TabIndex = 28;
-            this.button16.Text = "Raport Studenti Pe An De Studiu";
+            this.button16.Text = "Raport Studenti Pe An De Academic";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 

@@ -62,21 +62,23 @@ ORDER BY T_ModeleDeTaxa.IndexFormat DESC</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableNrStudentiTableAdapter" GeneratorDataComponentClassName="DataTableNrStudentiTableAdapter" Name="DataTableNrStudenti" UserDataComponentName="DataTableNrStudentiTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Database_CSConnectionString1 (Settings)" DbObjectName="T_Studenti" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Database_CSConnectionString (Settings)" DbObjectName="T_Dosare" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT       COUNT(NrMatricol) AS NrStudenti, An
-FROM            T_Studenti
-WHERE        (An &gt; '0') AND (An &lt; '4')
-GROUP BY An</CommandText>
+                    <CommandText>SELECT       T_Dosare.AnulCandi, COUNT(T_Studenti.NrMatricol) AS NrStudentiPerAnAcad
+FROM            ((T_Candidati INNER JOIN
+                         T_Studenti ON T_Candidati.NrDosar = T_Studenti.FK_NrDosar) INNER JOIN
+                         T_Dosare ON T_Candidati.NrDosar = T_Dosare.NrDosar)
+GROUP BY T_Dosare.AnulCandi
+ORDER BY T_Dosare.AnulCandi DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="NrStudenti" DataSetColumn="NrStudenti" />
-              <Mapping SourceColumn="An" DataSetColumn="An" />
+              <Mapping SourceColumn="AnulCandi" DataSetColumn="AnulCandi" />
+              <Mapping SourceColumn="NrStudentiPerAnAcad" DataSetColumn="NrStudentiPerAnAcad" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -121,75 +123,69 @@ ORDER BY T_Discipline.SemStudDisci, T_Discipline.AnStudDisci, T_Discipline.Punct
   <xs:element name="DataSet5DataPerFacultate" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet5DataPerFacultate" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet5DataPerFacultate">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTableNrCandidPerLiceu" msprop:Generator_RowClassName="DataTableNrCandidPerLiceuRow" msprop:Generator_RowEvHandlerName="DataTableNrCandidPerLiceuRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNrCandidPerLiceuRowDeleted" msprop:Generator_RowDeletingName="DataTableNrCandidPerLiceuRowDeleting" msprop:Generator_RowEvArgName="DataTableNrCandidPerLiceuRowChangeEvent" msprop:Generator_TablePropName="DataTableNrCandidPerLiceu" msprop:Generator_RowChangedName="DataTableNrCandidPerLiceuRowChanged" msprop:Generator_UserTableName="DataTableNrCandidPerLiceu" msprop:Generator_RowChangingName="DataTableNrCandidPerLiceuRowChanging" msprop:Generator_TableClassName="DataTableNrCandidPerLiceuDataTable" msprop:Generator_TableVarName="tableDataTableNrCandidPerLiceu">
+        <xs:element name="DataTableNrCandidPerLiceu" msprop:Generator_RowEvHandlerName="DataTableNrCandidPerLiceuRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNrCandidPerLiceuRowDeleted" msprop:Generator_RowDeletingName="DataTableNrCandidPerLiceuRowDeleting" msprop:Generator_RowEvArgName="DataTableNrCandidPerLiceuRowChangeEvent" msprop:Generator_TablePropName="DataTableNrCandidPerLiceu" msprop:Generator_RowChangedName="DataTableNrCandidPerLiceuRowChanged" msprop:Generator_UserTableName="DataTableNrCandidPerLiceu" msprop:Generator_RowChangingName="DataTableNrCandidPerLiceuRowChanging" msprop:Generator_RowClassName="DataTableNrCandidPerLiceuRow" msprop:Generator_TableClassName="DataTableNrCandidPerLiceuDataTable" msprop:Generator_TableVarName="tableDataTableNrCandidPerLiceu">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CodLiceu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CodLiceu" msprop:Generator_ColumnPropNameInTable="CodLiceuColumn" msprop:Generator_ColumnPropNameInRow="CodLiceu" msprop:Generator_ColumnVarNameInTable="columnCodLiceu" type="xs:int" minOccurs="0" />
-              <xs:element name="DenumireLiceu" msprop:Generator_UserColumnName="DenumireLiceu" msprop:Generator_ColumnPropNameInTable="DenumireLiceuColumn" msprop:Generator_ColumnPropNameInRow="DenumireLiceu" msprop:Generator_ColumnVarNameInTable="columnDenumireLiceu" minOccurs="0">
+              <xs:element name="CodLiceu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="CodLiceuColumn" msprop:Generator_ColumnPropNameInRow="CodLiceu" msprop:Generator_UserColumnName="CodLiceu" msprop:Generator_ColumnVarNameInTable="columnCodLiceu" type="xs:int" minOccurs="0" />
+              <xs:element name="DenumireLiceu" msprop:Generator_ColumnPropNameInTable="DenumireLiceuColumn" msprop:Generator_ColumnPropNameInRow="DenumireLiceu" msprop:Generator_UserColumnName="DenumireLiceu" msprop:Generator_ColumnVarNameInTable="columnDenumireLiceu" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NumarCandidati" msprop:Generator_UserColumnName="NumarCandidati" msprop:Generator_ColumnPropNameInTable="NumarCandidatiColumn" msprop:Generator_ColumnPropNameInRow="NumarCandidati" msprop:Generator_ColumnVarNameInTable="columnNumarCandidati" type="xs:int" minOccurs="0" />
-              <xs:element name="AnulCandi" msprop:Generator_UserColumnName="AnulCandi" msprop:Generator_ColumnPropNameInTable="AnulCandiColumn" msprop:Generator_ColumnPropNameInRow="AnulCandi" msprop:Generator_ColumnVarNameInTable="columnAnulCandi" type="xs:int" minOccurs="0" />
+              <xs:element name="NumarCandidati" msprop:Generator_ColumnPropNameInTable="NumarCandidatiColumn" msprop:Generator_ColumnPropNameInRow="NumarCandidati" msprop:Generator_UserColumnName="NumarCandidati" msprop:Generator_ColumnVarNameInTable="columnNumarCandidati" type="xs:int" minOccurs="0" />
+              <xs:element name="AnulCandi" msprop:Generator_ColumnPropNameInTable="AnulCandiColumn" msprop:Generator_ColumnPropNameInRow="AnulCandi" msprop:Generator_UserColumnName="AnulCandi" msprop:Generator_ColumnVarNameInTable="columnAnulCandi" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTableCastiguriAnuale" msprop:Generator_RowClassName="DataTableCastiguriAnualeRow" msprop:Generator_RowEvHandlerName="DataTableCastiguriAnualeRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableCastiguriAnualeRowDeleted" msprop:Generator_RowDeletingName="DataTableCastiguriAnualeRowDeleting" msprop:Generator_RowEvArgName="DataTableCastiguriAnualeRowChangeEvent" msprop:Generator_TablePropName="DataTableCastiguriAnuale" msprop:Generator_RowChangedName="DataTableCastiguriAnualeRowChanged" msprop:Generator_UserTableName="DataTableCastiguriAnuale" msprop:Generator_RowChangingName="DataTableCastiguriAnualeRowChanging" msprop:Generator_TableClassName="DataTableCastiguriAnualeDataTable" msprop:Generator_TableVarName="tableDataTableCastiguriAnuale">
+        <xs:element name="DataTableCastiguriAnuale" msprop:Generator_RowEvHandlerName="DataTableCastiguriAnualeRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableCastiguriAnualeRowDeleted" msprop:Generator_RowDeletingName="DataTableCastiguriAnualeRowDeleting" msprop:Generator_RowEvArgName="DataTableCastiguriAnualeRowChangeEvent" msprop:Generator_TablePropName="DataTableCastiguriAnuale" msprop:Generator_RowChangedName="DataTableCastiguriAnualeRowChanged" msprop:Generator_UserTableName="DataTableCastiguriAnuale" msprop:Generator_RowChangingName="DataTableCastiguriAnualeRowChanging" msprop:Generator_RowClassName="DataTableCastiguriAnualeRow" msprop:Generator_TableClassName="DataTableCastiguriAnualeDataTable" msprop:Generator_TableVarName="tableDataTableCastiguriAnuale">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="TranzactiiPeAn" msprop:Generator_UserColumnName="TranzactiiPeAn" msprop:Generator_ColumnPropNameInTable="TranzactiiPeAnColumn" msprop:Generator_ColumnPropNameInRow="TranzactiiPeAn" msprop:Generator_ColumnVarNameInTable="columnTranzactiiPeAn" type="xs:decimal" minOccurs="0" />
-              <xs:element name="IndexFormat" msprop:Generator_UserColumnName="IndexFormat" msprop:Generator_ColumnPropNameInTable="IndexFormatColumn" msprop:Generator_ColumnPropNameInRow="IndexFormat" msprop:Generator_ColumnVarNameInTable="columnIndexFormat" type="xs:int" minOccurs="0" />
+              <xs:element name="TranzactiiPeAn" msprop:Generator_ColumnPropNameInTable="TranzactiiPeAnColumn" msprop:Generator_ColumnPropNameInRow="TranzactiiPeAn" msprop:Generator_UserColumnName="TranzactiiPeAn" msprop:Generator_ColumnVarNameInTable="columnTranzactiiPeAn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IndexFormat" msprop:Generator_ColumnPropNameInTable="IndexFormatColumn" msprop:Generator_ColumnPropNameInRow="IndexFormat" msprop:Generator_UserColumnName="IndexFormat" msprop:Generator_ColumnVarNameInTable="columnIndexFormat" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTableNrStudenti" msprop:Generator_RowClassName="DataTableNrStudentiRow" msprop:Generator_RowEvHandlerName="DataTableNrStudentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNrStudentiRowDeleted" msprop:Generator_RowDeletingName="DataTableNrStudentiRowDeleting" msprop:Generator_RowEvArgName="DataTableNrStudentiRowChangeEvent" msprop:Generator_TablePropName="DataTableNrStudenti" msprop:Generator_RowChangedName="DataTableNrStudentiRowChanged" msprop:Generator_UserTableName="DataTableNrStudenti" msprop:Generator_RowChangingName="DataTableNrStudentiRowChanging" msprop:Generator_TableClassName="DataTableNrStudentiDataTable" msprop:Generator_TableVarName="tableDataTableNrStudenti">
+        <xs:element name="DataTableNrStudenti" msprop:Generator_RowEvHandlerName="DataTableNrStudentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNrStudentiRowDeleted" msprop:Generator_RowDeletingName="DataTableNrStudentiRowDeleting" msprop:Generator_RowEvArgName="DataTableNrStudentiRowChangeEvent" msprop:Generator_TablePropName="DataTableNrStudenti" msprop:Generator_RowChangedName="DataTableNrStudentiRowChanged" msprop:Generator_UserTableName="DataTableNrStudenti" msprop:Generator_RowChangingName="DataTableNrStudentiRowChanging" msprop:Generator_RowClassName="DataTableNrStudentiRow" msprop:Generator_TableClassName="DataTableNrStudentiDataTable" msprop:Generator_TableVarName="tableDataTableNrStudenti">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="NrStudenti" msprop:Generator_UserColumnName="NrStudenti" msprop:Generator_ColumnPropNameInTable="NrStudentiColumn" msprop:Generator_ColumnPropNameInRow="NrStudenti" msprop:Generator_ColumnVarNameInTable="columnNrStudenti" type="xs:int" minOccurs="0" />
-              <xs:element name="An" msprop:Generator_UserColumnName="An" msprop:Generator_ColumnPropNameInTable="AnColumn" msprop:Generator_ColumnPropNameInRow="An" msprop:Generator_ColumnVarNameInTable="columnAn" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="AnulCandi" msprop:Generator_ColumnPropNameInRow="AnulCandi" msprop:Generator_ColumnPropNameInTable="AnulCandiColumn" msprop:Generator_ColumnVarNameInTable="columnAnulCandi" msprop:Generator_UserColumnName="AnulCandi" type="xs:int" minOccurs="0" />
+              <xs:element name="NrStudentiPerAnAcad" msprop:Generator_ColumnPropNameInRow="NrStudentiPerAnAcad" msprop:Generator_ColumnPropNameInTable="NrStudentiPerAnAcadColumn" msprop:Generator_ColumnVarNameInTable="columnNrStudentiPerAnAcad" msprop:Generator_UserColumnName="NrStudentiPerAnAcad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTableRaportProfesor" msprop:Generator_RowEvHandlerName="DataTableRaportProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableRaportProfesorRowDeleted" msprop:Generator_RowDeletingName="DataTableRaportProfesorRowDeleting" msprop:Generator_RowEvArgName="DataTableRaportProfesorRowChangeEvent" msprop:Generator_TablePropName="DataTableRaportProfesor" msprop:Generator_RowChangedName="DataTableRaportProfesorRowChanged" msprop:Generator_RowChangingName="DataTableRaportProfesorRowChanging" msprop:Generator_TableClassName="DataTableRaportProfesorDataTable" msprop:Generator_RowClassName="DataTableRaportProfesorRow" msprop:Generator_TableVarName="tableDataTableRaportProfesor" msprop:Generator_UserTableName="DataTableRaportProfesor">
+        <xs:element name="DataTableRaportProfesor" msprop:Generator_RowClassName="DataTableRaportProfesorRow" msprop:Generator_RowEvHandlerName="DataTableRaportProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableRaportProfesorRowDeleted" msprop:Generator_RowDeletingName="DataTableRaportProfesorRowDeleting" msprop:Generator_RowEvArgName="DataTableRaportProfesorRowChangeEvent" msprop:Generator_TablePropName="DataTableRaportProfesor" msprop:Generator_RowChangedName="DataTableRaportProfesorRowChanged" msprop:Generator_UserTableName="DataTableRaportProfesor" msprop:Generator_RowChangingName="DataTableRaportProfesorRowChanging" msprop:Generator_TableClassName="DataTableRaportProfesorDataTable" msprop:Generator_TableVarName="tableDataTableRaportProfesor">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IDCF" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IDCF" msprop:Generator_ColumnPropNameInTable="IDCFColumn" msprop:Generator_ColumnVarNameInTable="columnIDCF" msprop:Generator_UserColumnName="IDCF" type="xs:int" minOccurs="0" />
-              <xs:element name="CFTitlu" msprop:Generator_ColumnPropNameInRow="CFTitlu" msprop:Generator_ColumnPropNameInTable="CFTitluColumn" msprop:Generator_ColumnVarNameInTable="columnCFTitlu" msprop:Generator_UserColumnName="CFTitlu" minOccurs="0">
+              <xs:element name="IDCF" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IDCF" msprop:Generator_ColumnPropNameInTable="IDCFColumn" msprop:Generator_ColumnPropNameInRow="IDCF" msprop:Generator_ColumnVarNameInTable="columnIDCF" type="xs:int" minOccurs="0" />
+              <xs:element name="CFTitlu" msprop:Generator_UserColumnName="CFTitlu" msprop:Generator_ColumnPropNameInTable="CFTitluColumn" msprop:Generator_ColumnPropNameInRow="CFTitlu" msprop:Generator_ColumnVarNameInTable="columnCFTitlu" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CFNume" msprop:Generator_ColumnPropNameInRow="CFNume" msprop:Generator_ColumnPropNameInTable="CFNumeColumn" msprop:Generator_ColumnVarNameInTable="columnCFNume" msprop:Generator_UserColumnName="CFNume" minOccurs="0">
+              <xs:element name="CFNume" msprop:Generator_UserColumnName="CFNume" msprop:Generator_ColumnPropNameInTable="CFNumeColumn" msprop:Generator_ColumnPropNameInRow="CFNume" msprop:Generator_ColumnVarNameInTable="columnCFNume" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="IdDisciplina" msprop:Generator_ColumnPropNameInRow="IdDisciplina" msprop:Generator_ColumnPropNameInTable="IdDisciplinaColumn" msprop:Generator_ColumnVarNameInTable="columnIdDisciplina" msprop:Generator_UserColumnName="IdDisciplina" type="xs:int" minOccurs="0" />
-              <xs:element name="DDenumire" msprop:Generator_ColumnPropNameInRow="DDenumire" msprop:Generator_ColumnPropNameInTable="DDenumireColumn" msprop:Generator_ColumnVarNameInTable="columnDDenumire" msprop:Generator_UserColumnName="DDenumire" minOccurs="0">
+              <xs:element name="IdDisciplina" msprop:Generator_UserColumnName="IdDisciplina" msprop:Generator_ColumnPropNameInTable="IdDisciplinaColumn" msprop:Generator_ColumnPropNameInRow="IdDisciplina" msprop:Generator_ColumnVarNameInTable="columnIdDisciplina" type="xs:int" minOccurs="0" />
+              <xs:element name="DDenumire" msprop:Generator_UserColumnName="DDenumire" msprop:Generator_ColumnPropNameInTable="DDenumireColumn" msprop:Generator_ColumnPropNameInRow="DDenumire" msprop:Generator_ColumnVarNameInTable="columnDDenumire" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PuncteCredit" msprop:Generator_ColumnPropNameInRow="PuncteCredit" msprop:Generator_ColumnPropNameInTable="PuncteCreditColumn" msprop:Generator_ColumnVarNameInTable="columnPuncteCredit" msprop:Generator_UserColumnName="PuncteCredit" type="xs:double" minOccurs="0" />
-              <xs:element name="NrOre" msprop:Generator_ColumnPropNameInRow="NrOre" msprop:Generator_ColumnPropNameInTable="NrOreColumn" msprop:Generator_ColumnVarNameInTable="columnNrOre" msprop:Generator_UserColumnName="NrOre" type="xs:short" minOccurs="0" />
-              <xs:element name="AnAcaDisci" msprop:Generator_ColumnPropNameInRow="AnAcaDisci" msprop:Generator_ColumnPropNameInTable="AnAcaDisciColumn" msprop:Generator_ColumnVarNameInTable="columnAnAcaDisci" msprop:Generator_UserColumnName="AnAcaDisci" type="xs:int" minOccurs="0" />
-              <xs:element name="AnStudDisci" msprop:Generator_ColumnPropNameInRow="AnStudDisci" msprop:Generator_ColumnPropNameInTable="AnStudDisciColumn" msprop:Generator_ColumnVarNameInTable="columnAnStudDisci" msprop:Generator_UserColumnName="AnStudDisci" type="xs:int" minOccurs="0" />
-              <xs:element name="SemStudDisci" msprop:Generator_ColumnPropNameInRow="SemStudDisci" msprop:Generator_ColumnPropNameInTable="SemStudDisciColumn" msprop:Generator_ColumnVarNameInTable="columnSemStudDisci" msprop:Generator_UserColumnName="SemStudDisci" type="xs:int" minOccurs="0" />
+              <xs:element name="PuncteCredit" msprop:Generator_UserColumnName="PuncteCredit" msprop:Generator_ColumnPropNameInTable="PuncteCreditColumn" msprop:Generator_ColumnPropNameInRow="PuncteCredit" msprop:Generator_ColumnVarNameInTable="columnPuncteCredit" type="xs:double" minOccurs="0" />
+              <xs:element name="NrOre" msprop:Generator_UserColumnName="NrOre" msprop:Generator_ColumnPropNameInTable="NrOreColumn" msprop:Generator_ColumnPropNameInRow="NrOre" msprop:Generator_ColumnVarNameInTable="columnNrOre" type="xs:short" minOccurs="0" />
+              <xs:element name="AnAcaDisci" msprop:Generator_UserColumnName="AnAcaDisci" msprop:Generator_ColumnPropNameInTable="AnAcaDisciColumn" msprop:Generator_ColumnPropNameInRow="AnAcaDisci" msprop:Generator_ColumnVarNameInTable="columnAnAcaDisci" type="xs:int" minOccurs="0" />
+              <xs:element name="AnStudDisci" msprop:Generator_UserColumnName="AnStudDisci" msprop:Generator_ColumnPropNameInTable="AnStudDisciColumn" msprop:Generator_ColumnPropNameInRow="AnStudDisci" msprop:Generator_ColumnVarNameInTable="columnAnStudDisci" type="xs:int" minOccurs="0" />
+              <xs:element name="SemStudDisci" msprop:Generator_UserColumnName="SemStudDisci" msprop:Generator_ColumnPropNameInTable="SemStudDisciColumn" msprop:Generator_ColumnPropNameInRow="SemStudDisci" msprop:Generator_ColumnVarNameInTable="columnSemStudDisci" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

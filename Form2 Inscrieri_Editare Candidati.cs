@@ -76,6 +76,8 @@ namespace Centralizator_Studenti
             textBox2.Enabled = textBox3.Enabled = textBox4.Enabled = textBox5.Enabled = textBox6.Enabled = textBox7.Enabled
                 = textBox8.Enabled = textBox9.Enabled = textBox10.Enabled = textBox11.Enabled = textBox12.Enabled = textBox13.Enabled = textBox14.Enabled = textBox15.Enabled = textBox16.Enabled = textBox17.Enabled = textBox18.Enabled = textBox19.Enabled = textBox20.Enabled = textBox21.Enabled = textBox22.Enabled = textBox23.Enabled = textBox24.Enabled = textBox25.Enabled = textBox26.Enabled
             = textBox27.Enabled = textBox28.Enabled = radioButton1.Enabled = radioButton2.Enabled = radioButton3.Enabled = listBox1.Enabled = true;
+            comboBox1.Enabled = false;
+            comboBox2.Enabled = false;
         }
 
         public void massDisb()
@@ -83,6 +85,8 @@ namespace Centralizator_Studenti
             textBox1.Enabled = textBox2.Enabled = textBox3.Enabled = textBox4.Enabled = textBox5.Enabled = textBox6.Enabled = textBox7.Enabled
                   = textBox8.Enabled = textBox9.Enabled = textBox10.Enabled = textBox11.Enabled = textBox12.Enabled = textBox13.Enabled = textBox14.Enabled = textBox15.Enabled = textBox16.Enabled = textBox17.Enabled = textBox18.Enabled = textBox19.Enabled = textBox20.Enabled = textBox21.Enabled = textBox22.Enabled = textBox23.Enabled = textBox24.Enabled = textBox25.Enabled = textBox26.Enabled = textBox27.Enabled = textBox28.Enabled
             = radioButton1.Enabled = radioButton2.Enabled = radioButton3.Enabled = listBox1.Enabled = false;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = false;
         }
         
 
@@ -112,6 +116,13 @@ namespace Centralizator_Studenti
 
             // Folosind lista globala pentru a incarca in form
             Incarca(ClassGlobalVar.listCandid[0]);
+            foreach(ClassCandidati candid in ClassGlobalVar.listCandid)
+            {
+                if(candid._AnCandi.ToString() != "" && !comboBox1.Items.Contains(candid._AnCandi))
+                {
+                    comboBox1.Items.Add(candid._AnCandi);
+                }
+            }
         }
 
         //trecerea la urmatorul candidat
@@ -254,9 +265,10 @@ namespace Centralizator_Studenti
                     oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                     oleDbCommand.ExecuteNonQuery();
 
-                    ClassGlobalVar.listCandid.Add(new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
+                    ClassCandidati cnd = new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
                         int.Parse(textBox7.Text), textBox10.Text, textBox14.Text, textBox13.Text, textBox12.Text, textBox11.Text, int.Parse(textBox15.Text), textBox16.Text, textBox9.Text, textBox17.Text, textBox27.Text, textBox28.Text,
-                        textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString()));
+                        textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString());
+                    ClassGlobalVar.listCandid.Add(cnd);
 
                     Incarca(ClassGlobalVar.listCandid[ClassGlobalVar.listCandid.Count - 1]);
                     ct = ClassGlobalVar.listCandid.Count - 1;
@@ -264,6 +276,14 @@ namespace Centralizator_Studenti
                     button1.Enabled = true;
                     button2.Enabled = false;
                     MessageBox.Show("Candidat adaugat cu succes!");
+                    if(!comboBox1.Items.Contains(int.Parse(textBox24.Text)))
+                    {
+                        comboBox1.Items.Add(int.Parse(textBox24.Text));
+                    }
+                    if(!comboBox2.Items.Contains(cnd) && int.Parse(comboBox1.Text) == cnd._AnCandi)
+                    {
+                        comboBox2.Items.Add(cnd);
+                    }
                 }
                 else
                 //salvarea editarilor candidatului
@@ -354,6 +374,49 @@ namespace Centralizator_Studenti
             ClassGlobalVar.connection.Close();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Items.Contains(int.Parse(comboBox1.Text))) 
+            {
+                comboBox2.Items.Clear();
+                foreach(ClassCandidati cand in ClassGlobalVar.listCandid)
+                {
+                    if(cand._AnCandi == int.Parse(comboBox1.Text))
+                    {
+                        comboBox2.Items.Add(cand);
+                    }
+                }
+                comboBox2.Enabled = true;
+            }
+        }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Incarca(comboBox2.Items[comboBox2.SelectedIndex] as ClassCandidati);
+            ct = 0;
+            foreach(ClassCandidati cd in ClassGlobalVar.listCandid)
+            {
+                if (cd._NrDosar == (comboBox2.Items[comboBox2.SelectedIndex] as ClassCandidati)._NrDosar)
+                    break;
+                ct++;
+            }
+            if (ct == 0 && ct == (ClassGlobalVar.listCandid.Count() - 1))
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
+            else
+            if (ct == 0)
+            {
+                button1.Enabled = false;
+                button2.Enabled = true;
+            }
+            else
+                if (ct == (ClassGlobalVar.listCandid.Count() - 1))
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+            }
+        }
     }
 }

@@ -309,6 +309,8 @@ namespace Centralizator_Studenti {
             
             private global::System.Data.DataColumn columnPrenume;
             
+            private global::System.Data.DataColumn columnCFTitlu;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable1DataTable() {
@@ -464,6 +466,14 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CFTitluColumn {
+                get {
+                    return this.columnCFTitlu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,7 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string CFNume, int IdDisciplina, string DDenumire, double PuncteCredit, short NrOre, int AnAcaDisci, int AnStudDisci, int SemStudDisci, int NotaFinala, int NrAbsente, string NrMatricol, string Nume, string InitialaTata, string Prenume) {
+            public DataTable1Row AddDataTable1Row(string CFNume, int IdDisciplina, string DDenumire, double PuncteCredit, short NrOre, int AnAcaDisci, int AnStudDisci, int SemStudDisci, int NotaFinala, int NrAbsente, string NrMatricol, string Nume, string InitialaTata, string Prenume, string CFTitlu) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -516,7 +526,8 @@ namespace Centralizator_Studenti {
                         NrMatricol,
                         Nume,
                         InitialaTata,
-                        Prenume};
+                        Prenume,
+                        CFTitlu};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -554,6 +565,7 @@ namespace Centralizator_Studenti {
                 this.columnNume = base.Columns["Nume"];
                 this.columnInitialaTata = base.Columns["InitialaTata"];
                 this.columnPrenume = base.Columns["Prenume"];
+                this.columnCFTitlu = base.Columns["CFTitlu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,6 +601,8 @@ namespace Centralizator_Studenti {
                 base.Columns.Add(this.columnInitialaTata);
                 this.columnPrenume = new global::System.Data.DataColumn("Prenume", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrenume);
+                this.columnCFTitlu = new global::System.Data.DataColumn("CFTitlu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCFTitlu);
                 this.columnIDCF.AutoIncrement = true;
                 this.columnIDCF.AutoIncrementSeed = -1;
                 this.columnIDCF.AutoIncrementStep = -1;
@@ -598,6 +612,7 @@ namespace Centralizator_Studenti {
                 this.columnNume.MaxLength = 255;
                 this.columnInitialaTata.MaxLength = 5;
                 this.columnPrenume.MaxLength = 255;
+                this.columnCFTitlu.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -980,6 +995,22 @@ namespace Centralizator_Studenti {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CFTitlu {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.CFTitluColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CFTitlu\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CFTitluColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsIDCFNull() {
                 return this.IsNull(this.tableDataTable1.IDCFColumn);
             }
@@ -1157,6 +1188,18 @@ namespace Centralizator_Studenti {
             public void SetPrenumeNull() {
                 this[this.tableDataTable1.PrenumeColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCFTitluNull() {
+                return this.IsNull(this.tableDataTable1.CFTitluColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCFTitluNull() {
+                this[this.tableDataTable1.CFTitluColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1333,6 +1376,7 @@ namespace Centralizator_Studenti.DataSet6ProfesorTableAdapters {
             tableMapping.ColumnMappings.Add("Nume", "Nume");
             tableMapping.ColumnMappings.Add("InitialaTata", "InitialaTata");
             tableMapping.ColumnMappings.Add("Prenume", "Prenume");
+            tableMapping.ColumnMappings.Add("CFTitlu", "CFTitlu");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1350,13 +1394,13 @@ namespace Centralizator_Studenti.DataSet6ProfesorTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT       T_CadreFacultate.IDCF, T_CadreFacultate.CFNume, T_Discipline.IdDisciplina, T_Discipline.DDenumire, T_Discipline.PuncteCredit, T_Discipline.NrOre, T_Discipline.AnAcaDisci, T_Discipline.AnStudDisci, T_Discipline.SemStudDisci, 
-                         T_SituatiiAcademice.NotaFinala, T_SituatiiAcademice.NrAbsente, T_Studenti.NrMatricol, T_Candidati.Nume, T_Candidati.InitialaTata, T_Candidati.Prenume
+                         T_SituatiiAcademice.NotaFinala, T_SituatiiAcademice.NrAbsente, T_Studenti.NrMatricol, T_Candidati.Nume, T_Candidati.InitialaTata, T_Candidati.Prenume, T_CadreFacultate.CFTitlu
 FROM            ((((T_CadreFacultate INNER JOIN
                          T_Discipline ON T_CadreFacultate.IDCF = T_Discipline.FK_IDCF) INNER JOIN
                          T_SituatiiAcademice ON T_Discipline.IdDisciplina = T_SituatiiAcademice.FK_IdDisciplina) INNER JOIN
                          T_Studenti ON T_SituatiiAcademice.FK_NrMatricol = T_Studenti.NrMatricol) INNER JOIN
                          T_Candidati ON T_Studenti.FK_NrDosar = T_Candidati.NrDosar)
-WHERE T_Discipline.IdDisciplina = @IDdisc
+WHERE        T_Discipline.IdDisciplina = @IDdisc
 ORDER BY T_Candidati.Nume, T_Candidati.InitialaTata, T_Candidati.Prenume";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IDdisc", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));

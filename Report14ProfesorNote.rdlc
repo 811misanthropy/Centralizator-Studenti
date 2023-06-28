@@ -29,18 +29,22 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nr. Crt.</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -59,18 +63,22 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nume</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -89,18 +97,22 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nota Finala</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -124,16 +136,19 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=RowNumber(Nothing)</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -154,16 +169,19 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Nume.Value+" "+Fields!InitialaTata.Value+" "+Fields!Prenume.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Nume</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -184,16 +202,19 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!NotaFinala.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NotaFinala</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -226,8 +247,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.93625in</Top>
-        <Left>0.96241in</Left>
+        <Top>1.5925in</Top>
+        <Left>1.405in</Left>
         <Height>0.5in</Height>
         <Width>5.703in</Width>
         <Style>
@@ -244,15 +265,19 @@
             <TextRuns>
               <TextRun>
                 <Value>SITUATIE NOTE PENTRU DISCIPLINA</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>0.10583cm</Top>
-        <Left>7.52452cm</Left>
+        <Left>7.20702cm</Left>
         <Height>0.6cm</Height>
         <Width>6.46875cm</Width>
         <ZIndex>1</ZIndex>
@@ -274,7 +299,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Anul Academic:</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -304,15 +331,17 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!AnAcaDisci.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>AnAcaDisci</rd:DefaultName>
-        <Top>3.47196cm</Top>
-        <Left>0.83057cm</Left>
+        <Top>2.69558cm</Top>
+        <Left>3.13245cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -334,15 +363,19 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!DDenumire.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DDenumire</rd:DefaultName>
         <Top>0.88222cm</Top>
-        <Left>8.3312cm</Left>
+        <Left>8.0137cm</Left>
         <Height>0.6cm</Height>
         <Width>5.04cm</Width>
         <ZIndex>4</ZIndex>
@@ -356,14 +389,82 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Titular disciplina,</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>6.2319cm</Top>
+        <Left>17.3702cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.02917cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CFNume">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CFTitlu.Value, "DataSet1")+" "+First(Fields!CFNume.Value, "DataSet1")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CFNume</rd:DefaultName>
+        <Top>7.00829cm</Top>
+        <Left>17.89937cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>13.73188cm</Height>
+    <Height>7.83167cm</Height>
     <Style />
   </Body>
   <Width>20.84916cm</Width>
   <Page>
     <PageHeader>
-      <Height>3.12208cm</Height>
+      <Height>2.98979cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -371,8 +472,8 @@
           <Source>Embedded</Source>
           <Value>Logo2</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.17133in</Top>
-          <Left>7.02605in</Left>
+          <Top>0.11579in</Top>
+          <Left>7.0103in</Left>
           <Height>0.74528in</Height>
           <Width>0.76041in</Width>
           <Style>
@@ -389,15 +490,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>Universitatea Romano-Americana</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>0.4352cm</Top>
-          <Left>0.36723cm</Left>
+          <Top>0.29412cm</Top>
+          <Left>0.32722cm</Left>
           <Height>0.6cm</Height>
           <Width>6.70688cm</Width>
           <ZIndex>1</ZIndex>
@@ -419,15 +522,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>Facultatea de Informatica Manageriala</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>1.07047cm</Top>
-          <Left>0.36723cm</Left>
+          <Top>0.92939cm</Top>
+          <Left>0.32722cm</Left>
           <Height>0.6cm</Height>
           <Width>6.70688cm</Width>
           <ZIndex>2</ZIndex>
@@ -449,15 +554,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>Specializarea: Informatica economica</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>1.67047cm</Top>
-          <Left>0.36723cm</Left>
+          <Top>1.52939cm</Top>
+          <Left>0.32722cm</Left>
           <Height>0.6cm</Height>
           <Width>6.70688cm</Width>
           <ZIndex>3</ZIndex>
@@ -479,15 +586,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>Invatamant cu frecventa</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>2.27047cm</Top>
-          <Left>0.36723cm</Left>
+          <Top>2.12939cm</Top>
+          <Left>0.32722cm</Left>
           <Height>0.6cm</Height>
           <Width>6.70688cm</Width>
           <ZIndex>4</ZIndex>
@@ -502,8 +611,8 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>1.18565in</Top>
-          <Left>0.16033in</Left>
+          <Top>1.13011in</Top>
+          <Left>0.14458in</Left>
           <Height>0in</Height>
           <Width>7.20265in</Width>
           <ZIndex>5</ZIndex>
@@ -604,6 +713,10 @@
         </Field>
         <Field Name="Prenume">
           <DataField>Prenume</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CFTitlu">
+          <DataField>CFTitlu</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -101,7 +102,7 @@ namespace Centralizator_Studenti
         {
             MessageBox.Show("Easter Egg!");
         }
-
+        //button renunta
         private void button3_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count == 1)
@@ -115,7 +116,7 @@ namespace Centralizator_Studenti
             listBox2.Items.Clear();
             button1_Click(sender, e);
         }
-
+        //button edit
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox2.Text == "Inmatriculat" && listBox1.SelectedItems.Count == 1)
@@ -126,7 +127,7 @@ namespace Centralizator_Studenti
             else
                 MessageBox.Show("Selectati un candidat deja inmatriculat!");
         }
-
+        //button salvare
         private void button4_Click(object sender, EventArgs e)
         {
             string a;
@@ -148,7 +149,7 @@ namespace Centralizator_Studenti
             button3_Click(sender, e);
 
         }
-
+        //button adauga in masa
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -226,7 +227,7 @@ namespace Centralizator_Studenti
                 MessageBox.Show("In casuta trebuie scris un numar natural nenul!");
             }
         }
-
+        //button inmatriculare
         private void button5_Click(object sender, EventArgs e)
         {
             if (listBox2.Items.Count > 0)
@@ -242,15 +243,21 @@ namespace Centralizator_Studenti
                 }
                 listBox2.Items.Clear();
                 ClassGlobalVar.connection.Close();
-
+                button3_Click(sender, e);
             }
             else
                 MessageBox.Show("Nu exista candidati in lista de inmatriculare!");
         }
-
-        private void Form3_Inmatriculare_Editare_Studenti_Load(object sender, EventArgs e)
+        //button nou
+        private void button7_Click(object sender, EventArgs e)
         {
-
+            if (listBox1.SelectedItems.Count == 1)
+            {
+                listBox2.Items.Add(listBox1.SelectedItem as ClassCandidati);
+                listBox1.Items.Remove(listBox1.SelectedItem as ClassCandidati);
+            }
+            else
+                MessageBox.Show("Alegeti mai intai un candidat!");
         }
     }
 }
