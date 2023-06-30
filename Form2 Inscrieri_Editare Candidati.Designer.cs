@@ -899,7 +899,7 @@
             // 
             this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button5.Location = new System.Drawing.Point(895, 639);
+            this.button5.Location = new System.Drawing.Point(705, 639);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(79, 44);
             this.button5.TabIndex = 7;
@@ -910,7 +910,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button6.Location = new System.Drawing.Point(694, 639);
+            this.button6.Location = new System.Drawing.Point(895, 638);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(79, 44);
             this.button6.TabIndex = 8;
@@ -922,9 +922,9 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(333, 628);
+            this.comboBox1.Location = new System.Drawing.Point(306, 628);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 27);
+            this.comboBox1.Size = new System.Drawing.Size(125, 27);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -932,7 +932,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label32.Location = new System.Drawing.Point(212, 630);
+            this.label32.Location = new System.Drawing.Point(185, 630);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(115, 19);
             this.label32.TabIndex = 10;
@@ -942,7 +942,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label33.Location = new System.Drawing.Point(193, 657);
+            this.label33.Location = new System.Drawing.Point(166, 657);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(134, 19);
             this.label33.TabIndex = 12;
@@ -953,9 +953,9 @@
             this.comboBox2.Enabled = false;
             this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(333, 655);
+            this.comboBox2.Location = new System.Drawing.Point(306, 655);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 27);
+            this.comboBox2.Size = new System.Drawing.Size(368, 27);
             this.comboBox2.TabIndex = 11;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 

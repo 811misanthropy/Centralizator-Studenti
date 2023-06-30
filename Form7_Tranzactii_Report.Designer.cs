@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new Centralizator_Studenti.DataSet2();
             this.dataTable11BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,12 +62,12 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "DataSetCandidatiTranzactiiModele";
-            reportDataSource3.Value = this.dataTable1BindingSource;
-            reportDataSource4.Name = "DataSetDataCandidati";
-            reportDataSource4.Value = this.dataTable11BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DataSetCandidatiTranzactiiModele";
+            reportDataSource1.Value = this.dataTable1BindingSource;
+            reportDataSource2.Name = "DataSetDataCandidati";
+            reportDataSource2.Value = this.dataTable11BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(291, 13);
             this.reportViewer1.Name = "reportViewer1";
