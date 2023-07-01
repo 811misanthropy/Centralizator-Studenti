@@ -14,11 +14,12 @@ namespace Centralizator_Studenti
 {
     public partial class Form6_VizualizareTaxe : Form
     {
-        public string holdID = "";
+        string holdID = "";
+        bool nou = false;
         public void Incarcare()
         {
             textBox2.Text = (listBox1.SelectedItem as ClassTaxe)._IDF;
-            textBox3.Text = (listBox1.SelectedItem as ClassTaxe)._Scop;
+            comboBox1.Text = (listBox1.SelectedItem as ClassTaxe)._Scop;
             textBox4.Text = (listBox1.SelectedItem as ClassTaxe)._AchStr;
         }
 
@@ -26,11 +27,6 @@ namespace Centralizator_Studenti
         public Form6_VizualizareTaxe()
         {
             InitializeComponent();
-        }
-
-        private void Form6_VizualizareTaxe_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,31 +53,25 @@ namespace Centralizator_Studenti
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Activare metode de adaugare
-            button3.Visible = button4.Visible = button5.Visible = textBox2.Enabled = textBox3.Enabled = textBox4.Enabled = true;
-
-            button2.Enabled = false;
-
-        }
-
+        //button renunta
         private void button3_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear(); textBox1.Clear(); textBox2.Clear(); textBox3.Clear(); textBox4.Clear();
-            button3.Visible = button4.Visible = button5.Visible = textBox2.Enabled = textBox3.Enabled = textBox4.Enabled = false;
+            listBox1.Items.Clear(); textBox1.Clear(); textBox2.Clear(); comboBox1.Text =""; textBox4.Clear();
+            button3.Visible = button4.Visible = button5.Visible = textBox2.Enabled = comboBox1.Enabled = textBox4.Enabled = false;
 
-            button2.Enabled = textBox1.Enabled = button1.Enabled = listBox1.Enabled = true;
+            button4.Visible = textBox1.Enabled = button1.Enabled = listBox1.Enabled = true;
             holdID = "";
+            nou = false;
         }
-
+        //button edit
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItems.Count > 0)
+            if (listBox1.SelectedItems.Count == 1)
             {
                 Incarcare();
                 holdID = (listBox1.SelectedItem as ClassTaxe)._ID;
-                listBox1.Enabled = button1.Enabled = textBox1.Enabled = false;
+                listBox1.Enabled = button1.Enabled = textBox1.Enabled = button4.Visible = button6.Visible = false;
+                button3.Visible = button5.Visible = true;
             }
             else
             {
@@ -90,22 +80,22 @@ namespace Centralizator_Studenti
 
 
         }
-
+        //button salvare
         private void button5_Click(object sender, EventArgs e)
         {
             ClassGlobalVar.connection.Open();
             if (ClassGlobalVar.IsNumeric(textBox2.Text))
             {
-                if (textBox3.Text == "" || textBox4.Text == "")
+                if (comboBox1.Text == "" || textBox4.Text == "")
                 {
                     MessageBox.Show("Scopul si valoarea taxei nu pot fi nule!");
                 }
                 else {
 
-                    if (holdID != "")
+                    if (!nou)
                     {
                         //Editare T_ModeleDeTaxa
-                        string query = $"UPDATE T_ModeleDeTaxa SET SumaDeAchitat={textBox4.Text},Scop='{textBox3.Text}'," +
+                        string query = $"UPDATE T_ModeleDeTaxa SET SumaDeAchitat={textBox4.Text},Scop='{comboBox1.Text}'," +
                             $"IndexFormat={textBox2.Text} WHERE CodFormat={holdID};";
                         using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
                         {
@@ -117,7 +107,7 @@ namespace Centralizator_Studenti
                         //insert T_ModeleDeTaxa
 
                         string query = "INSERT INTO T_ModeleDeTaxa(SumaDeAchitat,Scop,IndexFormat)" +
-                            $"VALUES('{textBox4.Text}','{textBox3.Text}','{textBox2.Text}');";
+                            $"VALUES('{textBox4.Text}','{comboBox1.Text}','{textBox2.Text}');";
 
                         OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                         oleDbCommand.ExecuteNonQuery();
@@ -130,6 +120,12 @@ namespace Centralizator_Studenti
             else MessageBox.Show("Anul nu a fost introdus corespunzator!");
             ClassGlobalVar.connection.Close();
             ClassGlobalVar.InitializareDate();
+        }
+        //button nou
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button3.Visible = button5.Visible = true;
+            nou = true;
         }
     }
 }
