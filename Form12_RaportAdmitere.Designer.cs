@@ -61,10 +61,11 @@
             reportDataSource1.Value = this.DataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report2_ListaAdmitere.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 38);
+            this.reportViewer1.Location = new System.Drawing.Point(16, 47);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(943, 562);
+            this.reportViewer1.Size = new System.Drawing.Size(1257, 691);
             this.reportViewer1.TabIndex = 0;
             // 
             // dataSet3BindingSource
@@ -83,25 +84,28 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 12);
+            this.textBox1.Location = new System.Drawing.Point(143, 15);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(110, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Anul Candidaturii:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(213, 10);
+            this.button1.Location = new System.Drawing.Point(284, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "Genereaza";
             this.button1.UseVisualStyleBackColor = true;
@@ -109,15 +113,17 @@
             // 
             // Form12_RaportAdmitere
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(967, 612);
+            this.ClientSize = new System.Drawing.Size(1289, 753);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form12_RaportAdmitere";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form12_RaportAdmitere";
             this.Load += new System.EventHandler(this.Form12_RaportAdmitere_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();

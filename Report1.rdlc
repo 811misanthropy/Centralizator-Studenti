@@ -461,7 +461,6 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetCandidatiTranzactiiModele</DataSetName>
         <Top>1.42361in</Top>
-        <Left>0.10417in</Left>
         <Height>0.5in</Height>
         <Width>8.31944in</Width>
         <Style>
@@ -524,7 +523,7 @@
         </Paragraphs>
         <rd:DefaultName>NrDosar1</rd:DefaultName>
         <Top>0.96181in</Top>
-        <Left>0.58207in</Left>
+        <Left>0.45707in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>2</ZIndex>
@@ -558,7 +557,7 @@
         </Paragraphs>
         <rd:DefaultName>Nume</rd:DefaultName>
         <Top>0.96181in</Top>
-        <Left>1.59596in</Left>
+        <Left>1.47096in</Left>
         <Height>0.25in</Height>
         <Width>3.03125in</Width>
         <ZIndex>3</ZIndex>
@@ -574,7 +573,7 @@
       </Textbox>
       <Line Name="Line1">
         <Top>1.28126in</Top>
-        <Left>0.46874in</Left>
+        <Left>0.34374in</Left>
         <Height>0in</Height>
         <Width>4.375in</Width>
         <ZIndex>4</ZIndex>
@@ -588,7 +587,7 @@
     <Height>7.66975cm</Height>
     <Style />
   </Body>
-  <Width>21.6397cm</Width>
+  <Width>21.42803cm</Width>
   <Page>
     <PageHeader>
       <Height>3.09244cm</Height>

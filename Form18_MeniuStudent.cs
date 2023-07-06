@@ -25,19 +25,25 @@ namespace Centralizator_Studenti
         private void button1_Click(object sender, EventArgs e)
         {
             Form21ReportStudentTranzactii f21 = new Form21ReportStudentTranzactii();
+            Hide();
             f21.ShowDialog();
+            Show();
         }
         //vizualizare note student
         private void button2_Click(object sender, EventArgs e)
         {
             Form20_RaportStudentNote f20 = new Form20_RaportStudentNote();
+            Hide();
             f20.ShowDialog();
+            Show();
         }
         //vizualizare prezenta activitati extracuriculare student
         private void button3_Click(object sender, EventArgs e)
         {
             Form23_ReportStudentPrezentaExtra f23 = new Form23_ReportStudentPrezentaExtra();
+            Hide();
             f23.ShowDialog();
+            Show();
         }
     }
 }

@@ -40,9 +40,10 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Centralizator_Studenti.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(206, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -50,17 +51,19 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(189, 12);
+            this.label11.Location = new System.Drawing.Point(252, 15);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.Size = new System.Drawing.Size(85, 16);
             this.label11.TabIndex = 28;
             this.label11.Text = "Bine ai venit: ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(250, 42);
+            this.button1.Location = new System.Drawing.Point(333, 52);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 34);
+            this.button1.Size = new System.Drawing.Size(137, 42);
             this.button1.TabIndex = 29;
             this.button1.Text = "Vizualizare Taxe";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(250, 108);
+            this.button2.Location = new System.Drawing.Point(333, 133);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 34);
+            this.button2.Size = new System.Drawing.Size(137, 42);
             this.button2.TabIndex = 30;
             this.button2.Text = "Vizualizare Note";
             this.button2.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(405, 42);
+            this.button3.Location = new System.Drawing.Point(540, 52);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 34);
+            this.button3.Size = new System.Drawing.Size(137, 42);
             this.button3.TabIndex = 31;
             this.button3.Text = "Vizualizare Prezenta Activitati";
             this.button3.UseVisualStyleBackColor = true;
@@ -88,16 +93,18 @@
             // 
             // Form18_MeniuStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(520, 188);
+            this.ClientSize = new System.Drawing.Size(693, 231);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form18_MeniuStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form18_MeniuStudent";
             this.Load += new System.EventHandler(this.Form18_MeniuStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

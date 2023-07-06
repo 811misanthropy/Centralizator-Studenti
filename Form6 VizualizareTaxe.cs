@@ -125,6 +125,9 @@ namespace Centralizator_Studenti
         private void button6_Click(object sender, EventArgs e)
         {
             button3.Visible = button5.Visible = true;
+            button6.Visible = button4.Visible = false;
+            textBox2.Enabled = textBox4.Enabled = comboBox1.Enabled = true;
+            listBox1.Enabled = textBox1.Enabled = button1.Enabled = false;
             nou = true;
         }
     }

@@ -43,25 +43,33 @@ namespace Centralizator_Studenti
                         {
                             //Meniu Student
                             Form18_MeniuStudent f18 = new Form18_MeniuStudent();
+                            Hide();
                             f18.ShowDialog();
+                            Show();
                         }
                         else if (ClassGlobalVar.account._Titlu == "Secretar")
                         {
                             //Meniu Secretariat
                             Form1 f1 = new Form1();
+                            Hide();
                             f1.ShowDialog();
+                            Show();
                         }
                         else if (a[0] == "Decan")
                         {
                             //Meniu Decan
                             Form1 f1 = new Form1();
+                            Hide();
                             f1.ShowDialog();
+                            Show();
                         }
                         else
                         {
                             //Meniu Profesor 
                             Form17_MeniuProfesor f17 = new Form17_MeniuProfesor();
+                            Hide();
                             f17.ShowDialog();
+                            Show();
                         }
                         textBox1.Text = textBox2.Text = "";
                     }
@@ -73,6 +81,15 @@ namespace Centralizator_Studenti
             }
             else
                 MessageBox.Show("Completati campurile de autentificare!");            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClassGlobalVar.account = new ClassAccount("4", "cd4@rau.ro", "CadDP4", "CadruDid4", "Decan.Conf.univ.dr.", "Activ");
+            Form1 f1 = new Form1();
+            Hide();
+            f1.ShowDialog();
+            Show();
         }
     }
 }

@@ -25,25 +25,33 @@ namespace Centralizator_Studenti
         private void button1_Click(object sender, EventArgs e)
         {
             Form8_View_Discipline f8 = new Form8_View_Discipline();
+            Hide();
             f8.ShowDialog();
+            Show();
         }
         //button Note
         private void button2_Click(object sender, EventArgs e)
         {
             Form9_SitAcademiceInput f9 = new Form9_SitAcademiceInput();
+            Hide();
             f9.ShowDialog();
+            Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form28RaportProfesorNote f28 = new Form28RaportProfesorNote();
+            Hide();
             f28.ShowDialog();
+            Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form27RaportProfesorPrezenta f27 = new Form27RaportProfesorPrezenta();
+            Hide();
             f27.ShowDialog();
+            Show();
         }
     }
 }

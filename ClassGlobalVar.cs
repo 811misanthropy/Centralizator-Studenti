@@ -12,8 +12,8 @@ namespace Centralizator_Studenti
     public static class ClassGlobalVar
     {
         //pathul si conexiunea globale pentru intreg proiectul
-        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\FACULTATE\\An3 Sem2\\Licenta\\Centralizator Studenti\\Database CS.accdb;Persist Security Info=False;";
-        //        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Database CS.accdb;Persist Security Info=False;";
+        //public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\FACULTATE\\An3 Sem2\\Licenta\\Centralizator Studenti\\Database CS.accdb;Persist Security Info=False;";
+        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\FACULTATE\\ALEX\\LICENTA\\APP\\Database CS.accdb;Persist Security Info=False;";
 
         public static OleDbConnection connection = new OleDbConnection(connectionString: connectionString);
 

@@ -56,10 +56,11 @@
             reportDataSource1.Value = this.dataTable4BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report6_StructuraGrupa.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 39);
+            this.reportViewer1.Location = new System.Drawing.Point(16, 48);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(880, 564);
+            this.reportViewer1.Size = new System.Drawing.Size(1173, 694);
             this.reportViewer1.TabIndex = 2;
             // 
             // dataTable4TableAdapter
@@ -69,31 +70,35 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(92, 12);
+            this.comboBox1.Location = new System.Drawing.Point(123, 15);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Alegeti Grupa:";
             // 
             // Form15_RaportStructuraGrupa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(904, 615);
+            this.ClientSize = new System.Drawing.Size(1205, 757);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form15_RaportStructuraGrupa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form15_RaportStructuraGrupa";
             this.Load += new System.EventHandler(this.Form15_RaportStructuraGrupa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTable4BindingSource)).EndInit();

@@ -116,6 +116,7 @@ namespace Centralizator_Studenti
                 }
                 ClassGlobalVar.connection.Close();
                 ClassGlobalVar.InitializareDate();
+                listBox1.Items.Clear();
                 IncarcareLista();
                 button3_Click(sender, e);
             }

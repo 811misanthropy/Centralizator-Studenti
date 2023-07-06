@@ -280,9 +280,12 @@ namespace Centralizator_Studenti
                     {
                         comboBox1.Items.Add(int.Parse(textBox24.Text));
                     }
-                    if(!comboBox2.Items.Contains(cnd) && int.Parse(comboBox1.Text) == cnd._AnCandi)
+                    if (comboBox1.Text != "")
                     {
-                        comboBox2.Items.Add(cnd);
+                        if (!comboBox2.Items.Contains(cnd) && int.Parse(comboBox1.Text) == cnd._AnCandi)
+                        {
+                            comboBox2.Items.Add(cnd);
+                        }
                     }
                 }
                 else
@@ -416,6 +419,11 @@ namespace Centralizator_Studenti
             {
                 button2.Enabled = false;
                 button1.Enabled = true;
+            }
+            else 
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
             }
         }
     }

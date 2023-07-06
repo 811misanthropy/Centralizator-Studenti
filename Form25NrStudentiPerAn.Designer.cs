@@ -56,9 +56,10 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Centralizator_Studenti.Report10NrStudentiPerAnAcademic.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(881, 604);
+            this.reportViewer1.Size = new System.Drawing.Size(1175, 743);
             this.reportViewer1.TabIndex = 0;
             // 
             // dataTableNrStudentiTableAdapter
@@ -67,11 +68,13 @@
             // 
             // Form25NrStudentiPerAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 604);
+            this.ClientSize = new System.Drawing.Size(1175, 743);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form25NrStudentiPerAn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form25NrStudentiPerAn";
             this.Load += new System.EventHandler(this.Form25NrStudentiPerAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTableNrStudentiBindingSource)).EndInit();

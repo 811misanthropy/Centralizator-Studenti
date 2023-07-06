@@ -41,9 +41,11 @@ namespace Centralizator_Studenti
         //functie verificare pentru butonul salvare
         private bool Verificare()
         {
-            if (radioButton1.Checked != radioButton2.Checked) { MessageBox.Show("Ati uitat sa bifati daca contul este activ sau nu!"); return false; }
+            if (radioButton1.Checked !=true && radioButton2.Checked!=true) { MessageBox.Show("Ati uitat sa bifati daca contul este activ sau nu!"); return false; }
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.Text == "") { MessageBox.Show("Toate casetele de informatii trebuie complatate!"); return false; }
             if(!comboBox1.Items.Contains(comboBox1.Text)) { MessageBox.Show("Titlul introdus trebuie selectat dintre cele inregistrate in camp!"); return false; }
+            if (textBox2.Text.Length!=10) { MessageBox.Show("Numarul de telefon trebuie sa fie format din 10 cifre!"); return false; }
+            if (!textBox3.Text.Contains("@rau.ro")) { MessageBox.Show("Adresa de e-mail trebuie sa se termine in \"@rau.ro\"!"); return false; }
             foreach(char c in textBox2.Text)
             {
                 string a = "";
@@ -76,7 +78,7 @@ namespace Centralizator_Studenti
                     comboBox1.Enabled = true;
                     textBox1.Enabled = textBox3.Enabled = textBox2.Enabled = radioButton1.Enabled = radioButton2.Enabled = true;
                     button1.Visible = button2.Visible = listBox1.Enabled = false;
-                    button3.Enabled = button4.Visible = textBox4.Visible = label5.Visible = true;
+                    button3.Visible = button4.Visible = textBox4.Visible = label5.Visible = true;
                     string[] d = (listBox1.SelectedItems[0] as ClassCadreFacultate)._CFTitlu.Split('.');
                     if (!(d[0]=="Secretar" || d[0] =="Asist" || d[0] == "Specialist"))
                         button6.Visible = true;
@@ -112,7 +114,7 @@ namespace Centralizator_Studenti
             textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = comboBox1.Text = ""; radioButton1.Checked = radioButton2.Checked = false;
             textBox1.Enabled = textBox3.Enabled = textBox2.Enabled = radioButton1.Enabled = radioButton2.Enabled = comboBox1.Enabled = true;
             button1.Visible = button2.Visible = listBox1.Enabled = false;
-            button3.Enabled = button4.Visible = textBox4.Visible = label5.Visible = true;
+            button3.Visible = button4.Visible = textBox4.Visible = label5.Visible = true;
             nou = true;
         }
 
@@ -141,13 +143,14 @@ namespace Centralizator_Studenti
                     ClassGlobalVar.listAcc.Add(acc);
                     ClassGlobalVar.connection.Close();
                     MessageBox.Show("Cadrul adaugat cu succes in baza de date!");
+                    button4_Click(sender, e);
                 }
                 else
                 {
                     //update in baza de date
                     string d = (listBox1.SelectedItems[0] as ClassCadreFacultate)._IDCF;
                     ClassCadreFacultate cfn = new ClassCadreFacultate(d, textBox1.Text, comboBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, a);
-                    string query = $"UPDATE T_CadreFacultate SET CFNume='{cfn._CFNume}', CFTitlu='{cfn._CFTitlu}', CFTelefon = '{cfn._CFTelefon}', CFEmail ='{cfn._CFEmail}', CFPassw='{cfn._CFPassw}',CFActiv'{cfn._Activ}' WHERE IDCF = '{cfn._IDCF}';";
+                    string query = $"UPDATE T_CadreFacultate SET CFNume='{cfn._CFNume}', CFTitlu='{cfn._CFTitlu}', CFTelefon = '{cfn._CFTelefon}', CFEmail ='{cfn._CFEmail}', CFPassw='{cfn._CFPassw}',CFActiv='{cfn._Activ}' WHERE IDCF = {cfn._IDCF};";
                     OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
                     oleDbCommand.ExecuteNonQuery();
                     ClassGlobalVar.connection.Close();
