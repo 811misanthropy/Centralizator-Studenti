@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.Threading;
 using System.Collections;
 using System.Security.Cryptography.X509Certificates;
+using System.Web.UI;
 
 namespace Centralizator_Studenti
 {
@@ -25,6 +26,45 @@ namespace Centralizator_Studenti
             }
             return false;
         }
+
+
+        //functie de verificare la scrierea in bza de date
+        bool Verificare()
+        {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "" || textBox9.Text == "" || textBox10.Text == "" || textBox11.Text == "" || textBox12.Text == "" || textBox13.Text == "" || textBox14.Text == "" || textBox15.Text == "" || textBox16.Text == "" || textBox17.Text == "" || textBox18.Text == "" || textBox19.Text == "" || textBox20.Text == "" || textBox21.Text == "" || textBox22.Text == "" || textBox23.Text == "" || textBox24.Text == "" || textBox25.Text == "" || textBox26.Text == "" || textBox27.Text == "" || textBox28.Text == "") { MessageBox.Show("Campurile nu pot fi goale!"); return false; }
+            if (radioButton1.Checked==false && radioButton2.Checked==false && radioButton3.Checked==false) { MessageBox.Show("Genul candidatului trbuie mentionat!"); return false; }
+            if (listBox1.SelectedItems.Count != 1) { MessageBox.Show("Trebuie selectat un liceu!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox6.Text, "telefon")) { MessageBox.Show("Telefon: trebuie sa fie format din 10 cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox10.Text, "CNP")) { MessageBox.Show("CNP: trebuie sa fie format din 13 cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox26.Text, "data")) { MessageBox.Show("Data Nastere: trebuie sa fie \n dupa formatul \"ZZ\\MM\\YYYY\"!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox27.Text, "data")) { MessageBox.Show("Buletin Eliberat La: trebuie sa fie \n dupa formatul \"ZZ\\MM\\YYYY\"!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox28.Text, "data")) { MessageBox.Show("Buletin Expira La: trebuie sa fie \n dupa formatul \"ZZ\\MM\\YYYY\"!"); return false; }
+            if (!(textBox5.Text.Contains("@"))) { MessageBox.Show("Adresa de E-mail trebuie sa contina @!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox2.Text + textBox3.Text + textBox4.Text, "litere")) { MessageBox.Show("Numele candidatului nu poate contine cifre"); return false; }
+            if (!(textBox3.Text.Contains("."))) { MessageBox.Show("Initiala nu este corespunzatoare!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox8.Text,"litere")) { MessageBox.Show("Buletin Serie: nu poate contine cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox7.Text, "cifre")) { MessageBox.Show("Buletin Numar: nu poate contine litere!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox9.Text,"litere")) { MessageBox.Show("Buletin Nationaliate: nu poate contine cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox14.Text, "litere")) { MessageBox.Show("Buletin Tara: nu poate contine cifre!"); return false;  }
+            if (ClassGlobalVar.VerificareProt(textBox15.Text, "cifre")) { MessageBox.Show("Buletin Numar Strada: poate contine doar cifre!"); return false;  }
+            if (ClassGlobalVar.VerificareProt(textBox16.Text, "cifre")) { MessageBox.Show("Buletin Cod Postal: poate contine doar cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox23.Text, "litere")) { MessageBox.Show("Serie Diploma: nu poate contine cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox25.Text, "cifre")) { MessageBox.Show("Numar Diploma: poate contine doar cifre!"); return false; }
+            if (!double.TryParse(textBox21.Text, out double result)) { MessageBox.Show("Media Bac: Trebuie sa fie un numar intreg \n de la 6 pana la 10 inclusiv!"); return false; }
+            else
+                if (double.Parse(textBox21.Text) < 6 || double.Parse(textBox21.Text) > 10) { MessageBox.Show("Media Bac: Trebuie sa fie un numar intreg \n de la 6 pana la 10 inclusiv!"); return false; }
+            if (!double.TryParse(textBox19.Text, out double result2)) { MessageBox.Show("Nota Secundara: Trebuie sa fie un numar intreg \n de la 6 pana la 10 inclusiv!"); return false; }
+            else
+                if (double.Parse(textBox19.Text) < 6 || double.Parse(textBox19.Text) > 10) { MessageBox.Show("Nota Secundara: Trebuie sa fie un numar intreg \n de la 6 pana la 10 inclusiv!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox20.Text, "cifre")) { MessageBox.Show("Dosar Foaie Matricola: poate contine doar cifre!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox18.Text, "AnAbs")) { MessageBox.Show("Dosar An Absolvire: trebuie sa fie sub forma \'2000-2001\'"); return false; }
+            if (!int.TryParse(textBox24.Text, out int result3)) { MessageBox.Show("DOsar An Candidatura: Trebuie sa fie un numar intreg \n de la 1900 pana la 2300 inclusiv!"); return false; }
+            else
+                if (int.Parse(textBox24.Text) < 1900 || double.Parse(textBox24.Text) > 2300) { MessageBox.Show("DOsar An Candidatura: Trebuie sa fie un numar intreg \n de la 1900 pana la 2300 inclusiv!"); return false; }
+
+            return true;
+        }
+
         //functie pentru a incarca informatiile unui candidat in form
         public void Incarca(ClassCandidati cd)
         {
@@ -218,163 +258,164 @@ namespace Centralizator_Studenti
         //salvarea editarilor candidatului actual sau introducerea in BD candidat nou
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            if (Verificare())
+            {
+                ClassGlobalVar.connection.Open();
 
-            ClassGlobalVar.connection.Open();
-            
-            //variabile pentru ajutor
-            string codLiceu;
-            int NrDos = int.Parse(textBox1.Text);
-            string sex;
-            if (radioButton1.Checked == true)
-                sex = "Masculin";
-            else
-                if (radioButton2.Checked == true)
+                //variabile pentru ajutor
+                string codLiceu;
+                int NrDos = int.Parse(textBox1.Text);
+                string sex;
+                if (radioButton1.Checked == true)
+                    sex = "Masculin";
+                else
+                    if (radioButton2.Checked == true)
                     sex = "Feminin";
                 else
                     sex = "Nespecificat";
-            string qr = $"SELECT CodLiceu FROM T_Licee WHERE Denumire = '{ listBox1.Items[listBox1.SelectedIndex]}';";
-            OleDbCommand command = new OleDbCommand(qr, ClassGlobalVar.connection);
-            OleDbDataReader reader = command.ExecuteReader();
-            
-            if(reader.Read())
-            {
-                codLiceu = reader["CodLiceu"].ToString();
-                //candidat nou
-                if (!CheckForNrDosar(textBox1.Text))
+                string qr = $"SELECT CodLiceu FROM T_Licee WHERE Denumire = '{listBox1.Items[listBox1.SelectedIndex]}';";
+                OleDbCommand command = new OleDbCommand(qr, ClassGlobalVar.connection);
+                OleDbDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    //insert T_Candidati
-                    string query = "INSERT INTO T_Candidati(NrDosar,Nume,InitialaTata,Prenume,Sex,DataNastere,Email,Telefon,FK_CodLiceu)" +
-                        "VALUES('" + NrDos + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + sex + "','" + textBox26.Text + "'," +
-                        "'" + textBox5.Text + "','" + textBox6.Text + "','" + codLiceu + "');";
-
-                    OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                    oleDbCommand.ExecuteNonQuery();
-
-                    //insert T_Dosare
-                    query = "INSERT INTO T_Dosare(NrDosar,SerieDiploma,NrDiploma,MedieBac,NotaSecundara,Profil,AnAbsolvire,FoaieMatricola,AnulCandi)" +
-                        "VALUES('" + NrDos + "','" + textBox23.Text + "','" + textBox25.Text + "','" + textBox21.Text + "','" + textBox19.Text + "','" + textBox22.Text + "'" +
-                        ",'" + textBox18.Text + "','" + textBox20.Text + "','" + textBox24.Text + "');";
-                    oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                    oleDbCommand.ExecuteNonQuery();
-
-                    //insert T_Buletine
-                    query = "INSERT INTO T_Buletine(Serie,Numar,CNP,Tara,Judet,Localitate,Strada,NrStrada,CodPostal,Nationalitate,EliberatDe,EliberatLa,ExpiraLa,FK_NrDosar)" +
-                        "VALUES('" + textBox8.Text + "','" + textBox7.Text + "','" + textBox10.Text + "','" + textBox14.Text + "','" + textBox13.Text + "','" + textBox12.Text + "','" + textBox11.Text + "'," +
-                        "'" + textBox15.Text + "','" + textBox16.Text + "','" + textBox9.Text + "','" + textBox17.Text + "','" + textBox27.Text + "','" + textBox28.Text + "','" + NrDos + "');";
-                    oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                    oleDbCommand.ExecuteNonQuery();
-
-                    ClassCandidati cnd = new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
-                        int.Parse(textBox7.Text), textBox10.Text, textBox14.Text, textBox13.Text, textBox12.Text, textBox11.Text, int.Parse(textBox15.Text), textBox16.Text, textBox9.Text, textBox17.Text, textBox27.Text, textBox28.Text,
-                        textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString());
-                    ClassGlobalVar.listCandid.Add(cnd);
-
-                    Incarca(ClassGlobalVar.listCandid[ClassGlobalVar.listCandid.Count - 1]);
-                    ct = ClassGlobalVar.listCandid.Count - 1;
-                    massDisb();
-                    button1.Enabled = true;
-                    button2.Enabled = false;
-                    MessageBox.Show("Candidat adaugat cu succes!");
-                    if(!comboBox1.Items.Contains(int.Parse(textBox24.Text)))
+                    codLiceu = reader["CodLiceu"].ToString();
+                    //candidat nou
+                    if (!CheckForNrDosar(textBox1.Text))
                     {
-                        comboBox1.Items.Add(int.Parse(textBox24.Text));
-                    }
-                    if (comboBox1.Text != "")
-                    {
-                        if (!comboBox2.Items.Contains(cnd) && int.Parse(comboBox1.Text) == cnd._AnCandi)
+                        //insert T_Candidati
+                        string query = "INSERT INTO T_Candidati(NrDosar,Nume,InitialaTata,Prenume,Sex,DataNastere,Email,Telefon,FK_CodLiceu)" +
+                            "VALUES('" + NrDos + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + sex + "','" + textBox26.Text + "'," +
+                            "'" + textBox5.Text + "','" + textBox6.Text + "','" + codLiceu + "');";
+
+                        OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                        oleDbCommand.ExecuteNonQuery();
+
+                        //insert T_Dosare
+                        query = "INSERT INTO T_Dosare(NrDosar,SerieDiploma,NrDiploma,MedieBac,NotaSecundara,Profil,AnAbsolvire,FoaieMatricola,AnulCandi)" +
+                            "VALUES('" + NrDos + "','" + textBox23.Text + "','" + textBox25.Text + "','" + textBox21.Text + "','" + textBox19.Text + "','" + textBox22.Text + "'" +
+                            ",'" + textBox18.Text + "','" + textBox20.Text + "','" + textBox24.Text + "');";
+                        oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                        oleDbCommand.ExecuteNonQuery();
+
+                        //insert T_Buletine
+                        query = "INSERT INTO T_Buletine(Serie,Numar,CNP,Tara,Judet,Localitate,Strada,NrStrada,CodPostal,Nationalitate,EliberatDe,EliberatLa,ExpiraLa,FK_NrDosar)" +
+                            "VALUES('" + textBox8.Text + "','" + textBox7.Text + "','" + textBox10.Text + "','" + textBox14.Text + "','" + textBox13.Text + "','" + textBox12.Text + "','" + textBox11.Text + "'," +
+                            "'" + textBox15.Text + "','" + textBox16.Text + "','" + textBox9.Text + "','" + textBox17.Text + "','" + textBox27.Text + "','" + textBox28.Text + "','" + NrDos + "');";
+                        oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                        oleDbCommand.ExecuteNonQuery();
+
+                        ClassCandidati cnd = new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
+                            int.Parse(textBox7.Text), textBox10.Text, textBox14.Text, textBox13.Text, textBox12.Text, textBox11.Text, int.Parse(textBox15.Text), textBox16.Text, textBox9.Text, textBox17.Text, textBox27.Text, textBox28.Text,
+                            textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString());
+                        ClassGlobalVar.listCandid.Add(cnd);
+
+                        Incarca(ClassGlobalVar.listCandid[ClassGlobalVar.listCandid.Count - 1]);
+                        ct = ClassGlobalVar.listCandid.Count - 1;
+                        massDisb();
+                        button1.Enabled = true;
+                        button2.Enabled = false;
+                        MessageBox.Show("Candidat adaugat cu succes!");
+                        if (!comboBox1.Items.Contains(int.Parse(textBox24.Text)))
                         {
-                            comboBox2.Items.Add(cnd);
+                            comboBox1.Items.Add(int.Parse(textBox24.Text));
                         }
+                        if (comboBox1.Text != "")
+                        {
+                            if (!comboBox2.Items.Contains(cnd) && int.Parse(comboBox1.Text) == cnd._AnCandi)
+                            {
+                                comboBox2.Items.Add(cnd);
+                            }
+                        }
+                    }
+                    else
+                    //salvarea editarilor candidatului
+                    {
+                        ClassCandidati c = new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
+                            int.Parse(textBox7.Text), textBox10.Text, textBox14.Text, textBox13.Text, textBox12.Text, textBox11.Text, int.Parse(textBox15.Text), textBox16.Text, textBox9.Text, textBox17.Text, textBox27.Text, textBox28.Text,
+                            textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString());
+                        ClassGlobalVar.listCandid[ct] = new ClassCandidati(c);
+
+
+                        string qry = "UPDATE T_Candidati SET Nume = @Nume, InitialaTata = @InitialaTata, Prenume = @Prenume, Sex = @Sex, " +
+                            "DataNastere = @DataNastere, Email = @Email, Telefon = @Telefon, FK_CodLiceu = @FK_CodLiceu " +
+                            "WHERE NrDosar = @NrDosar";
+                        using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
+                        {
+                            comm.Parameters.AddWithValue("@Nume", textBox2.Text);
+                            comm.Parameters.AddWithValue("@InitialaTata", textBox3.Text);
+                            comm.Parameters.AddWithValue("@Prenume", textBox4.Text);
+                            comm.Parameters.AddWithValue("@Sex", sex);
+                            comm.Parameters.AddWithValue("@DataNastere", textBox26.Text);
+                            comm.Parameters.AddWithValue("@Email", textBox5.Text);
+                            comm.Parameters.AddWithValue("@Telefon", textBox6.Text);
+                            comm.Parameters.AddWithValue("@FK_CodLiceu", codLiceu);
+                            comm.Parameters.AddWithValue("@NrDosar", NrDos);
+                            comm.ExecuteNonQuery();
+                        }
+
+                        qry = "UPDATE T_Dosare SET SerieDiploma = @SerDip, NrDiploma = @NrDp, MedieBac = @MdBac, NotaSecundara = @NS, Profil = @Prd, " +
+                            "AnAbsolvire = @AnAbs, FoaieMatricola = @FM, AnulCandi = @AnCnd WHERE NrDosar = @NrDs";
+                        using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
+                        {
+                            comm.Parameters.AddWithValue("@SerDip", textBox23.Text);
+                            comm.Parameters.AddWithValue("@NrDp", textBox25.Text);
+                            comm.Parameters.AddWithValue("@MdBac", textBox21.Text);
+                            comm.Parameters.AddWithValue("@NS", textBox19.Text);
+                            comm.Parameters.AddWithValue("@Prd", textBox22.Text);
+                            comm.Parameters.AddWithValue("@AnAbs", textBox18.Text);
+                            comm.Parameters.AddWithValue("@FM", textBox20.Text);
+                            comm.Parameters.AddWithValue("@AnCnd", textBox24.Text);
+                            comm.Parameters.AddWithValue("@NrDs", NrDos.ToString());
+                            comm.ExecuteNonQuery();
+                        }
+
+                        qry = "UPDATE T_Buletine SET Serie = @Ser, Numar = @NrBl, CNP = @CNP, Tara = @Tr, Judet = @Jd, Localitate = @Loc, Strada = @St, " +
+                            "NrStrada = @NrS, CodPostal = @CP, Nationalitate = @Nt, EliberatDe = @ElibDe, EliberatLa = @ElibLa, ExpiraLa = @ExpLa " +
+                            "WHERE FK_NrDosar = @NrDs";
+                        using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
+                        {
+                            comm.Parameters.AddWithValue("@Ser", textBox8.Text);
+                            comm.Parameters.AddWithValue("@NrBl", textBox7.Text);
+                            comm.Parameters.AddWithValue("@CNP", textBox10.Text);
+                            comm.Parameters.AddWithValue("@Tr", textBox14.Text);
+                            comm.Parameters.AddWithValue("@Jd", textBox13.Text);
+                            comm.Parameters.AddWithValue("@Loc", textBox12.Text);
+                            comm.Parameters.AddWithValue("@St", textBox11.Text);
+                            comm.Parameters.AddWithValue("@NrS", textBox15.Text);
+                            comm.Parameters.AddWithValue("@CP", textBox16.Text);
+                            comm.Parameters.AddWithValue("@Nt", textBox9.Text);
+                            comm.Parameters.AddWithValue("@ElibDe", textBox17.Text);
+                            comm.Parameters.AddWithValue("@ElibLa", textBox27.Text);
+                            comm.Parameters.AddWithValue("@ExpLa", textBox28.Text);
+                            comm.Parameters.AddWithValue("@NrDs", NrDos.ToString());
+                            comm.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Candidat actualizat cu succes!");
+                        Incarca(ClassGlobalVar.listCandid[ct]);
+                        massDisb();
+                        if (ct > 0 && ct < ClassGlobalVar.listCandid.Count - 1)
+                        {
+                            button1.Enabled = button2.Enabled = true;
+                        }
+                        else if (ct > 0)
+                        {
+                            button1.Enabled = true;
+                        }
+                        else
+                            button2.Enabled = true;
                     }
                 }
                 else
-                //salvarea editarilor candidatului
                 {
-                    ClassCandidati c = new ClassCandidati(NrDos.ToString(), textBox2.Text, textBox3.Text, textBox4.Text, sex, textBox26.Text, textBox5.Text, textBox6.Text, textBox8.Text,
-                        int.Parse(textBox7.Text), textBox10.Text, textBox14.Text, textBox13.Text, textBox12.Text, textBox11.Text, int.Parse(textBox15.Text), textBox16.Text, textBox9.Text, textBox17.Text, textBox27.Text, textBox28.Text,
-                        textBox23.Text, int.Parse(textBox25.Text), double.Parse(textBox21.Text), double.Parse(textBox19.Text), textBox22.Text, textBox18.Text, int.Parse(textBox20.Text), int.Parse(textBox24.Text), listBox1.Items[listBox1.SelectedIndex].ToString());
-                    ClassGlobalVar.listCandid[ct] = new ClassCandidati(c);
-
-
-                    string qry = "UPDATE T_Candidati SET Nume = @Nume, InitialaTata = @InitialaTata, Prenume = @Prenume, Sex = @Sex, " +
-                        "DataNastere = @DataNastere, Email = @Email, Telefon = @Telefon, FK_CodLiceu = @FK_CodLiceu " +
-                        "WHERE NrDosar = @NrDosar";
-                    using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
-                    {
-                        comm.Parameters.AddWithValue("@Nume", textBox2.Text);
-                        comm.Parameters.AddWithValue("@InitialaTata", textBox3.Text);
-                        comm.Parameters.AddWithValue("@Prenume", textBox4.Text);
-                        comm.Parameters.AddWithValue("@Sex", sex);
-                        comm.Parameters.AddWithValue("@DataNastere", textBox26.Text);
-                        comm.Parameters.AddWithValue("@Email", textBox5.Text);
-                        comm.Parameters.AddWithValue("@Telefon", textBox6.Text);
-                        comm.Parameters.AddWithValue("@FK_CodLiceu", codLiceu);
-                        comm.Parameters.AddWithValue("@NrDosar", NrDos);
-                        comm.ExecuteNonQuery();
-                    }
-
-                    qry = "UPDATE T_Dosare SET SerieDiploma = @SerDip, NrDiploma = @NrDp, MedieBac = @MdBac, NotaSecundara = @NS, Profil = @Prd, " +
-                        "AnAbsolvire = @AnAbs, FoaieMatricola = @FM, AnulCandi = @AnCnd WHERE NrDosar = @NrDs";
-                    using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
-                    {
-                        comm.Parameters.AddWithValue("@SerDip", textBox23.Text);
-                        comm.Parameters.AddWithValue("@NrDp", textBox25.Text);
-                        comm.Parameters.AddWithValue("@MdBac", textBox21.Text);
-                        comm.Parameters.AddWithValue("@NS", textBox19.Text);
-                        comm.Parameters.AddWithValue("@Prd", textBox22.Text);
-                        comm.Parameters.AddWithValue("@AnAbs", textBox18.Text);
-                        comm.Parameters.AddWithValue("@FM", textBox20.Text);
-                        comm.Parameters.AddWithValue("@AnCnd", textBox24.Text);
-                        comm.Parameters.AddWithValue("@NrDs", NrDos.ToString());
-                        comm.ExecuteNonQuery();
-                    }
-
-                    qry = "UPDATE T_Buletine SET Serie = @Ser, Numar = @NrBl, CNP = @CNP, Tara = @Tr, Judet = @Jd, Localitate = @Loc, Strada = @St, " +
-                        "NrStrada = @NrS, CodPostal = @CP, Nationalitate = @Nt, EliberatDe = @ElibDe, EliberatLa = @ElibLa, ExpiraLa = @ExpLa " +
-                        "WHERE FK_NrDosar = @NrDs";
-                    using (OleDbCommand comm = new OleDbCommand(qry, ClassGlobalVar.connection))
-                    {
-                        comm.Parameters.AddWithValue("@Ser", textBox8.Text);
-                        comm.Parameters.AddWithValue("@NrBl", textBox7.Text);
-                        comm.Parameters.AddWithValue("@CNP", textBox10.Text);
-                        comm.Parameters.AddWithValue("@Tr", textBox14.Text);
-                        comm.Parameters.AddWithValue("@Jd", textBox13.Text);
-                        comm.Parameters.AddWithValue("@Loc", textBox12.Text);
-                        comm.Parameters.AddWithValue("@St", textBox11.Text);
-                        comm.Parameters.AddWithValue("@NrS", textBox15.Text);
-                        comm.Parameters.AddWithValue("@CP", textBox16.Text);
-                        comm.Parameters.AddWithValue("@Nt", textBox9.Text);
-                        comm.Parameters.AddWithValue("@ElibDe", textBox17.Text);
-                        comm.Parameters.AddWithValue("@ElibLa", textBox27.Text);
-                        comm.Parameters.AddWithValue("@ExpLa", textBox28.Text);
-                        comm.Parameters.AddWithValue("@NrDs", NrDos.ToString());
-                        comm.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Candidat actualizat cu succes!");
-                    Incarca(ClassGlobalVar.listCandid[ct]);
-                    massDisb();
-                    if (ct > 0 && ct < ClassGlobalVar.listCandid.Count - 1)
-                    {
-                        button1.Enabled = button2.Enabled = true;
-                    }
-                    else if (ct > 0)
-                    {
-                        button1.Enabled = true;
-                    }
-                    else
-                        button2.Enabled = true;
+                    MessageBox.Show("Erroare, trebuie selectat un liceu din list box care se regaseste si in baza de date!");
                 }
+                reader.Close();
+                button3.Enabled = button6.Enabled = true;
+                button4.Enabled = button5.Enabled = false;
+                ClassGlobalVar.connection.Close();
             }
-            else
-            {
-                MessageBox.Show("Erroare, trebuie selectat un liceu din list box care se regaseste si in baza de date!");
-            }
-            reader.Close();
-            button3.Enabled = button6.Enabled = true;
-            button4.Enabled = button5.Enabled = false;
-            ClassGlobalVar.connection.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

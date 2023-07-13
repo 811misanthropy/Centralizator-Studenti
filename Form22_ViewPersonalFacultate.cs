@@ -42,7 +42,7 @@ namespace Centralizator_Studenti
         private bool Verificare()
         {
             if (radioButton1.Checked !=true && radioButton2.Checked!=true) { MessageBox.Show("Ati uitat sa bifati daca contul este activ sau nu!"); return false; }
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.Text == "") { MessageBox.Show("Toate casetele de informatii trebuie complatate!"); return false; }
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.Text == "" || textBox4.Text =="") { MessageBox.Show("Toate casetele de informatii trebuie complatate!"); return false; }
             if(!comboBox1.Items.Contains(comboBox1.Text)) { MessageBox.Show("Titlul introdus trebuie selectat dintre cele inregistrate in camp!"); return false; }
             if (textBox2.Text.Length!=10) { MessageBox.Show("Numarul de telefon trebuie sa fie format din 10 cifre!"); return false; }
             if (!textBox3.Text.Contains("@rau.ro")) { MessageBox.Show("Adresa de e-mail trebuie sa se termine in \"@rau.ro\"!"); return false; }

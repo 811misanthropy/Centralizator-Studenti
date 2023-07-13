@@ -23,6 +23,20 @@ namespace Centralizator_Studenti
             textBox4.Text = (listBox1.SelectedItem as ClassTaxe)._AchStr;
         }
 
+        bool Verificare()
+        {
+            
+            if (textBox2.Text == "" || textBox4.Text=="" || comboBox1.Text == "") { MessageBox.Show("Campurile nu pot fi goale!"); return false; }
+            if (!double.TryParse(textBox4.Text, out double result)) { MessageBox.Show("Valoarea Taxa: trebuie sa fie un numer mai mare decat 0 (egal in cazul bursei)!"); return false; }
+            else if (double.Parse(textBox4.Text) < 0) { MessageBox.Show("Valoarea Taxa: trebuie sa fie un numer mai mare decat 0 (egal in cazul bursei)!"); return false; }
+            if (!(comboBox1.SelectedIndex > -1)) { MessageBox.Show("Scopul: trebuie ales din campul specific!"); return false; }
+            if (comboBox1.Text != comboBox1.SelectedItem.ToString()) { MessageBox.Show("Scopul: trebuie ales din camp!"); return false; }
+            if (textBox2.Text.Length != 4) { MessageBox.Show("Anul Efect Taxei: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+            else if (!int.TryParse(textBox2.Text, out int result2)) { MessageBox.Show("Anul Efect Taxei: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+            else if (int.Parse(textBox2.Text)<1900 || int.Parse(textBox2.Text) > 2300) { MessageBox.Show("Anul Efect Taxei: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+
+            return true;
+        }
 
         public Form6_VizualizareTaxe()
         {
@@ -59,7 +73,7 @@ namespace Centralizator_Studenti
             listBox1.Items.Clear(); textBox1.Clear(); textBox2.Clear(); comboBox1.Text =""; textBox4.Clear();
             button3.Visible = button4.Visible = button5.Visible = textBox2.Enabled = comboBox1.Enabled = textBox4.Enabled = false;
 
-            button4.Visible = textBox1.Enabled = button1.Enabled = listBox1.Enabled = true;
+            button4.Visible = button6.Visible = textBox1.Enabled = button1.Enabled = listBox1.Enabled = true;
             holdID = "";
             nou = false;
         }
@@ -71,7 +85,7 @@ namespace Centralizator_Studenti
                 Incarcare();
                 holdID = (listBox1.SelectedItem as ClassTaxe)._ID;
                 listBox1.Enabled = button1.Enabled = textBox1.Enabled = button4.Visible = button6.Visible = false;
-                button3.Visible = button5.Visible = true;
+                textBox2.Enabled =textBox4.Enabled = comboBox1.Enabled =button3.Visible = button5.Visible = true;
             }
             else
             {
@@ -83,44 +97,49 @@ namespace Centralizator_Studenti
         //button salvare
         private void button5_Click(object sender, EventArgs e)
         {
-            ClassGlobalVar.connection.Open();
-            if (ClassGlobalVar.IsNumeric(textBox2.Text))
+            if (Verificare())
             {
-                if (comboBox1.Text == "" || textBox4.Text == "")
+                ClassGlobalVar.connection.Open();
+                if (ClassGlobalVar.IsNumeric(textBox2.Text))
                 {
-                    MessageBox.Show("Scopul si valoarea taxei nu pot fi nule!");
-                }
-                else {
-
-                    if (!nou)
+                    if (comboBox1.Text == "" || textBox4.Text == "")
                     {
-                        //Editare T_ModeleDeTaxa
-                        string query = $"UPDATE T_ModeleDeTaxa SET SumaDeAchitat={textBox4.Text},Scop='{comboBox1.Text}'," +
-                            $"IndexFormat={textBox2.Text} WHERE CodFormat={holdID};";
-                        using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
-                        {
-                            comm.ExecuteNonQuery();
-                        }
+                        MessageBox.Show("Scopul si valoarea taxei nu pot fi nule!");
                     }
                     else
                     {
-                        //insert T_ModeleDeTaxa
 
-                        string query = "INSERT INTO T_ModeleDeTaxa(SumaDeAchitat,Scop,IndexFormat)" +
-                            $"VALUES('{textBox4.Text}','{comboBox1.Text}','{textBox2.Text}');";
+                        if (!nou)
+                        {
+                            //Editare T_ModeleDeTaxa
+                            string query = $"UPDATE T_ModeleDeTaxa SET SumaDeAchitat='{textBox4.Text}',Scop='{comboBox1.Text}'," +
+                                $"IndexFormat={textBox2.Text} WHERE CodFormat={holdID};";
+                            using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
+                            {
+                                comm.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            //insert T_ModeleDeTaxa
 
-                        OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                        oleDbCommand.ExecuteNonQuery();
+                            string query = "INSERT INTO T_ModeleDeTaxa(SumaDeAchitat,Scop,IndexFormat)" +
+                                $"VALUES('{textBox4.Text}','{comboBox1.Text}','{textBox2.Text}');";
+
+                            OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                            oleDbCommand.ExecuteNonQuery();
+
+                        }
+                        button3_Click(sender, e);
 
                     }
-                    button3_Click(sender, e);
-                    
-                } 
-             } 
-            else MessageBox.Show("Anul nu a fost introdus corespunzator!");
-            ClassGlobalVar.connection.Close();
-            ClassGlobalVar.InitializareDate();
+                }
+                else MessageBox.Show("Anul nu a fost introdus corespunzator!");
+                ClassGlobalVar.connection.Close();
+                ClassGlobalVar.InitializareDate();
+            }
         }
+
         //button nou
         private void button6_Click(object sender, EventArgs e)
         {

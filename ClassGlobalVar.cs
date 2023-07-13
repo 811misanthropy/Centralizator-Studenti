@@ -250,6 +250,64 @@ namespace Centralizator_Studenti
             }
             return false;
         }
+        public static bool VerificareProt(string tb, string s)
+        {
+            switch (s)
+            {
+                case "telefon":
+                    if (tb.Length != 10) return true;
+                    foreach (char c in tb)
+                    {
+                        if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0')
+                            return true;
+                    }
+                    break;
+
+                case "CNP":
+                    if (tb.Length != 13) return true;
+                    foreach (char c in tb)
+                    {
+                        if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0')
+                            return true;
+                    }
+                    break;
+                case "data":
+                    if (tb.Length != 10) return true;
+                    if (tb[2] != '/' && tb[5] != '/') return true;
+                    foreach (char c in tb)
+                    {
+                        if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0' && c != '/')
+                            return true;
+                    }
+                    string[] d = tb.Split('/');
+                    if (d.Length != 3 || d[0].Length != 2 || d[1].Length != 2 || d[2].Length != 4) return true;
+                    if (int.Parse(d[2]) < 1900 || int.Parse(d[2]) > 2200) return true;
+                    if (int.Parse(d[0]) < 1 || int.Parse(d[1]) < 1 || int.Parse(d[1]) > 12) return true;
+                    if (int.Parse(d[1]) == 2)
+                    {
+                        if (int.Parse(d[0]) > 29) return true;
+                    }
+                    if ((int.Parse(d[1]) == 1 || int.Parse(d[1]) == 3 || int.Parse(d[1]) == 5 || int.Parse(d[1]) == 7 || int.Parse(d[1]) == 8 || int.Parse(d[1]) == 10 || int.Parse(d[1]) == 12) && int.Parse(d[0]) > 31) return true;
+                    if (!(int.Parse(d[1]) == 1 || int.Parse(d[1]) == 3 || int.Parse(d[1]) == 5 || int.Parse(d[1]) == 7 || int.Parse(d[1]) == 8 || int.Parse(d[1]) == 10 || int.Parse(d[1]) == 12 || int.Parse(d[1]) == 2) && int.Parse(d[0]) > 30) return true;
+                    break;
+                case "litere":
+                    foreach (char c in tb)
+                    {
+                        if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '0')
+                            return true;
+                    }
+                    break;
+                case "cifre":
+                    foreach (char c in tb)
+                    {
+                        if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0')
+                            return true;
+                    }
+                    break;
+                default: break;
+            }
+            return false;
+        }
 
     }
 }

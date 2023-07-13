@@ -65,7 +65,7 @@ namespace Centralizator_Studenti
             }
             foreach(ClassTranzactii t in ClassGlobalVar.listTrans)
             {
-                if(t._cand._NrDosar==cand._NrDosar && t._cand._AnCandi.ToString()==str && (t._tax._Scop=="Taxa completa"||t._tax._Scop=="Taxa prima transa"))
+                if(t._cand._NrDosar==cand._NrDosar && t._cand._AnCandi.ToString()==str && (t._tax._Scop=="Taxa Completa"||t._tax._Scop=="Taxa Prima Transa"))
                 {
                     vf2 = true; break;
                 }
@@ -111,9 +111,10 @@ namespace Centralizator_Studenti
             }
             else
                 MessageBox.Show("Selectati un candidat!");
-            listBox1.Enabled = button1.Enabled = button2.Enabled = true;
+            listBox1.Enabled = button1.Enabled = button2.Enabled = button7.Enabled = true;
             textBox2.Enabled = textBox4.Enabled = textBox5.Enabled = textBox6.Enabled = button3.Enabled = button4.Enabled = false;
             listBox2.Items.Clear();
+            radioButton1.Enabled = radioButton2.Enabled = false;
             button1_Click(sender, e);
         }
         //button edit
@@ -121,7 +122,8 @@ namespace Centralizator_Studenti
         {
             if (textBox2.Text == "Inmatriculat" && listBox1.SelectedItems.Count == 1)
             {
-                listBox1.Enabled = button1.Enabled = button2.Enabled = false;
+                listBox1.Enabled = button1.Enabled = button2.Enabled = button7.Enabled = false;
+                radioButton1.Enabled = radioButton2.Enabled = true;
                 textBox2.Enabled = textBox4.Enabled = textBox5.Enabled = textBox6.Enabled = button3.Enabled = button4.Enabled = true;
             }
             else
@@ -253,8 +255,23 @@ namespace Centralizator_Studenti
         {
             if (listBox1.SelectedItems.Count == 1)
             {
-                listBox2.Items.Add(listBox1.SelectedItem as ClassCandidati);
-                listBox1.Items.Remove(listBox1.SelectedItem as ClassCandidati);
+                if (textBox2.Text != "Inmatriculat")
+                {
+                    if (VerificareInmatriculare((listBox1.SelectedItems[0] as ClassCandidati), textBox1.Text))
+                    {
+                        listBox2.Items.Add(listBox1.SelectedItem as ClassCandidati);
+                        listBox1.Items.Remove(listBox1.SelectedItem as ClassCandidati);
+                        button3.Enabled = button5.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Candidatul nu indeplineste criteriul de taxa!");
+                    }
+                }
+                else
+                    MessageBox.Show("Candidatul este deja inmatriculat!");
+
+                
             }
             else
                 MessageBox.Show("Alegeti mai intai un candidat!");

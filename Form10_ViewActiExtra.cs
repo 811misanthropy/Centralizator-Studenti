@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,20 @@ namespace Centralizator_Studenti
 
             return false;
         }
+
+        bool Verificare2()
+        {
+            if ( textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text=="" || textBox7.Text=="" || textBox8.Text=="" ) { MessageBox.Show("Toate campurile trebuiesc completate!"); return false; }
+            if (radioButton1.Checked != true && radioButton2.Checked != true && radioButton3.Checked != true) { MessageBox.Show("Tipul activitatii trebuie selectat!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox2.Text, "data") || ClassGlobalVar.VerificareProt(textBox3.Text, "data")) { MessageBox.Show("Data de start si data de final ale evenimetului trebuie sa fie pe formatul \"zz/ll/aaaa\"!"); return false; }
+            if (textBox8.Text != "1" && textBox2.Text != "2") { MessageBox.Show("Semestrul poate sa fie doar 1 sau 2!"); return false; }
+            if (textBox7.Text.Length != 4) { MessageBox.Show("Anul Academic Aplicabil: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+            else if (!int.TryParse(textBox7.Text, out int result2)) { MessageBox.Show("Anul Academic Aplicabil: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+            else if (int.Parse(textBox7.Text) < 1900 || int.Parse(textBox7.Text) > 2300) { MessageBox.Show("Anul Academic Aplicabil: Trebuie sa fie un an de la 1900 pana la 2300"); return false; }
+
+            return true;
+        }
+
         public Form10_ViewActiExtra()
         {
             InitializeComponent();
@@ -49,18 +64,24 @@ namespace Centralizator_Studenti
         {
             if(textBox5.Text!="" && textBox6.Text!="")
             {
-                listBox1.Items.Clear();
-                string[] a = textBox5.Text.Split('/');
-                string[] b = textBox6.Text.Split('/');
-                foreach(ClassActivitatiextra acte in ClassGlobalVar.listActExtr)
+                if (!ClassGlobalVar.VerificareProt(textBox5.Text, "data") && !ClassGlobalVar.VerificareProt(textBox6.Text, "data"))
                 {
-                    string[] a2 = acte._DataStart.Split('/');
-                    string[] b2 = acte._DataEnd.Split('/');
-                    if (Verificare(a,a2,b,b2))
+                    listBox1.Items.Clear();
+                    string[] a = textBox5.Text.Split('/');
+                    string[] b = textBox6.Text.Split('/');
+                    foreach (ClassActivitatiextra acte in ClassGlobalVar.listActExtr)
                     {
-                        listBox1.Items.Add(acte);
+                        string[] a2 = acte._DataStart.Split('/');
+                        string[] b2 = acte._DataEnd.Split('/');
+                        if (Verificare(a, a2, b, b2))
+                        {
+                            listBox1.Items.Add(acte);
+                        }
                     }
+
                 }
+                else
+                    MessageBox.Show("Datele de cautare introduse nu corespund criteriului (\"zz/ll/aaaa\")!");
             }
             else
             {
@@ -132,35 +153,38 @@ namespace Centralizator_Studenti
         //button salvare
         private void button4_Click(object sender, EventArgs e)
         {
-            ClassGlobalVar.connection.Open();
-            string m="";
-            if (radioButton1.Checked)
-                m = "Sesiune de Comunicari";
-            if (radioButton2.Checked)
-                m = "Activitate Extracuriculara";
-            if (radioButton3.Checked)
-                m = "Curs cu profesori straini";
-            if(nou==true)
+            if (Verificare2())
             {
-                string query = $"INSERT INTO T_ActivitatiExtracuriculare (AEDenumire, DataS, DataE, Organizator, Tip, AnAcadAplicabil, SemAE) " +
-                    $"VALUES ('{textBox1.Text}','{textBox2.Text}','{textBox3.Text}','{textBox4.Text}','{m}',{textBox7.Text},{textBox8.Text});";
-                OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                oleDbCommand.ExecuteNonQuery();
-            }
-            else
-            {
-                string n = (listBox1.SelectedItems[0] as ClassActivitatiextra)._IdActivExtra;
-                string query = $"UPDATE T_ActivitatiExtracuriculare SET AEDenumire='{textBox1.Text}', DataS='{textBox2.Text}', DataE='{textBox3.Text}', Organizator='{textBox4.Text}', Tip='{m}', AnAcadAplicabil={textBox7.Text}, SemAE={textBox8.Text} WHERE " +
-                    $"IdActivExtra = {n};";
-                using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
+                ClassGlobalVar.connection.Open();
+                string m = "";
+                if (radioButton1.Checked)
+                    m = "Sesiune de Comunicari";
+                if (radioButton2.Checked)
+                    m = "Activitate Extracuriculara";
+                if (radioButton3.Checked)
+                    m = "Curs cu profesori straini";
+                if (nou == true)
                 {
-                    comm.ExecuteNonQuery();
+                    string query = $"INSERT INTO T_ActivitatiExtracuriculare (AEDenumire, DataS, DataE, Organizator, Tip, AnAcadAplicabil, SemAE) " +
+                        $"VALUES ('{textBox1.Text}','{textBox2.Text}','{textBox3.Text}','{textBox4.Text}','{m}',{textBox7.Text},{textBox8.Text});";
+                    OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                    oleDbCommand.ExecuteNonQuery();
                 }
+                else
+                {
+                    string n = (listBox1.SelectedItems[0] as ClassActivitatiextra)._IdActivExtra;
+                    string query = $"UPDATE T_ActivitatiExtracuriculare SET AEDenumire='{textBox1.Text}', DataS='{textBox2.Text}', DataE='{textBox3.Text}', Organizator='{textBox4.Text}', Tip='{m}', AnAcadAplicabil={textBox7.Text}, SemAE={textBox8.Text} WHERE " +
+                        $"IdActivExtra = {n};";
+                    using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
+                    {
+                        comm.ExecuteNonQuery();
+                    }
+                }
+                ClassGlobalVar.connection.Close();
+                ClassGlobalVar.InitializareDate();
+                nou = false;
+                button1_Click(sender, e);
             }
-            ClassGlobalVar.connection.Close();
-            ClassGlobalVar.InitializareDate();
-            nou = false;
-            button1_Click(sender, e);
         }
 
 

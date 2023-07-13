@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,21 @@ namespace Centralizator_Studenti
         public Form8_View_Discipline()
         {
             InitializeComponent();
+        }
+
+        bool Verificare()
+        {
+            if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "") { MessageBox.Show("Campurile nu pot fi goale!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox2.Text, "cifre")) { MessageBox.Show("Puncte Credit: trebuie sa fie un numar intreg intre 1 si 10!"); return false; }
+            if (int.Parse(textBox2.Text) < 1 || int.Parse(textBox2.Text) > 10) { MessageBox.Show("Puncte Credit: trebuie sa fie un numar intreg intre 1 si 10!"); return false; }
+            if (ClassGlobalVar.VerificareProt(textBox5.Text, "cifre")) { MessageBox.Show("Numar Ore: trebuie sa fie un numar intreg intre 1 si 40!"); return false; }
+            if (int.Parse(textBox5.Text) < 1 || int.Parse(textBox5.Text) > 10) { MessageBox.Show("Numar Ore: trebuie sa fie un numar intreg intre 1 si 40!"); return false; }
+            if (textBox6.Text != "1" || textBox6.Text != "2" || textBox6.Text != "3") { MessageBox.Show("Anul Studentesc: poate fi doar 1, 2 sau 3!"); return false; }
+            if (textBox7.Text != "1" || textBox7.Text != "2") { MessageBox.Show("Semestrul: poate fi doar 1 sau 2!"); return false; }
+            if (int.TryParse(textBox4.Text, out int result)) { MessageBox.Show("Anul Academic: poate sa fie doar un numar intreg intre 1900 si 2300 inclusiv!"); return false; }
+            if(int.Parse(textBox4.Text)<1900 || int.Parse(textBox4.Text)>2300){ MessageBox.Show("Anul Academic: poate sa fie doar un numar intreg intre 1900 si 2300 inclusiv!"); return false; }
+
+            return true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,29 +106,32 @@ namespace Centralizator_Studenti
         }
         //button salvare
         private void button5_Click(object sender, EventArgs e)
-        {   
-            ClassGlobalVar.connection.Open();
-            if(nou==true)
+        {
+            if (Verificare())
             {
-                int m = int.Parse(ClassGlobalVar.listDisci[ClassGlobalVar.listDisci.Count()-1]._IdDisciplna)+1;
-                string query = $"INSERT INTO T_Discipline (IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci, FK_IDCF) VALUES ({m},'{textBox3.Text}',{textBox2.Text},{textBox5.Text},{textBox4.Text},{textBox6.Text},{textBox7.Text},{ClassGlobalVar.account._CompID})";
-                OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
-                oleDbCommand.ExecuteNonQuery();
-                nou = false;
-            }
-            else
-            {
-                string query = $"UPDATE T_Discipline SET DDenumire='{textBox3.Text}',PuncteCredit={textBox2.Text}," +
-                                $"NrOre={textBox5.Text}, AnAcaDisci={textBox4.Text}, AnStudDisci={textBox6.Text}, SemStudDisci={textBox7.Text} WHERE IdDisciplina={(listBox1.SelectedItems[0] as ClassDiscipline)._IdDisciplna};";
-                using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
+                ClassGlobalVar.connection.Open();
+                if (nou == true)
                 {
-                    comm.ExecuteNonQuery();
+                    int m = int.Parse(ClassGlobalVar.listDisci[ClassGlobalVar.listDisci.Count() - 1]._IdDisciplna) + 1;
+                    string query = $"INSERT INTO T_Discipline (IdDisciplina, DDenumire, PuncteCredit, NrOre, AnAcaDisci, AnStudDisci, SemStudDisci, FK_IDCF) VALUES ({m},'{textBox3.Text}',{textBox2.Text},{textBox5.Text},{textBox4.Text},{textBox6.Text},{textBox7.Text},{ClassGlobalVar.account._CompID})";
+                    OleDbCommand oleDbCommand = new OleDbCommand(query, ClassGlobalVar.connection);
+                    oleDbCommand.ExecuteNonQuery();
+                    nou = false;
                 }
-                listBox1.Items.Clear();
+                else
+                {
+                    string query = $"UPDATE T_Discipline SET DDenumire='{textBox3.Text}',PuncteCredit={textBox2.Text}," +
+                                    $"NrOre={textBox5.Text}, AnAcaDisci={textBox4.Text}, AnStudDisci={textBox6.Text}, SemStudDisci={textBox7.Text} WHERE IdDisciplina={(listBox1.SelectedItems[0] as ClassDiscipline)._IdDisciplna};";
+                    using (OleDbCommand comm = new OleDbCommand(query, ClassGlobalVar.connection))
+                    {
+                        comm.ExecuteNonQuery();
+                    }
+                    listBox1.Items.Clear();
+                }
+                ClassGlobalVar.connection.Close();
+                ClassGlobalVar.InitializareDate();
+                button3_Click(sender, e);
             }
-            ClassGlobalVar.connection.Close();
-            ClassGlobalVar.InitializareDate();
-            button3_Click(sender, e);
         }
     }
 }
